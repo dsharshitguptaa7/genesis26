@@ -1,7 +1,15 @@
 [ 
  {
-    "enrollment": "240501002",
-    "name": "Rahul Singh",
+    "enrollment": "CSJMA26000004543",
+    "name": "Anirudh Tripathi",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "pending",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004542",
+    "name": "Aniket Verma",
     "course": "B.Sc Physics (Hons)",
     "payment": "pending",
     "passReleased": false,
