@@ -1,0 +1,133 @@
+:root{
+    --primary:#6D1F2A;
+    --primary-dark:#571821;
+    --secondary:#8B2635;
+
+    --bg:#F5EBDD;
+    --card:#FFFDF8;
+
+    --text:#3D2B1F;
+    --border:#D8C7AE;
+
+    --gold:#C9A227;
+
+    --success:#2E7D32;
+    --error:#C62828;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:var(--bg);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.card{
+    width:100%;
+    max-width:450px;
+    background:var(--card);
+    padding:35px;
+    border-radius:18px;
+    border:1px solid var(--border);
+    box-shadow:0 12px 30px rgba(61,43,31,0.15);
+}
+
+h1{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:8px;
+    font-size:32px;
+    letter-spacing:1px;
+}
+
+.subtitle{
+    text-align:center;
+    margin-bottom:30px;
+    color:#6F5A4B;
+    font-size:15px;
+}
+
+.inputBox{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--text);
+}
+
+input,
+select{
+    width:100%;
+    padding:12px 15px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:white;
+    color:var(--text);
+    font-size:15px;
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(109,31,42,.15);
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+
+#result{
+    margin-top:25px;
+    text-align:center;
+    font-size:17px;
+    line-height:1.6;
+}
+
+.success{
+    color:var(--success);
+    font-weight:bold;
+}
+
+.error{
+    color:var(--error);
+    font-weight:bold;
+}
+
+.pending{
+    color:#D68910;
+    font-weight:bold;
+}

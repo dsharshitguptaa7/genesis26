@@ -1,0 +1,58 @@
+[ 
+ {
+    "enrollment": "240501002",
+    "name": "Rahul Singh",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "pending",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "240501002",
+    "name": "Rahul Singh",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "pending",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA260000001607",
+    "name": "Nandini Kumari",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": ""
+  },
+  {
+    "enrollment": "240501002",
+    "name": "Rahul Singh",
+    "course": "M.Sc Physics",
+    "payment": "pending",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "240501001",
+    "name": "Harshit Gupta",
+    "course": "M.Sc Chemistry",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "240501002",
+    "name": "Rahul Singh",
+    "course": "M.Sc Mathematics",
+    "payment": "pending",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA260000006143",
+    "name": "Harshit Gupta",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  }
+]
