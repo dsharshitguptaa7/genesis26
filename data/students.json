@@ -4,7 +4,7 @@
     "name": "Anirudh Tripathi",
     "course": "B.Sc Physics (Hons)",
     "payment": "pending",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   },
   {
@@ -12,7 +12,7 @@
     "name": "Aniket Verma",
     "course": "B.Sc Physics (Hons)",
     "payment": "pending",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   },
   {
