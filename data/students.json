@@ -1,26 +1,10 @@
 [ 
  {
-<<<<<<< HEAD
     "enrollment": "CSJMA26000004542",
     "name": "Aniket Verma",
     "course": "B.Sc Physics (Hons)",
     "payment": "confirmed",
     "passReleased": false,
-=======
-    "enrollment": "CSJMA26000004543",
-    "name": "Anirudh Tripathi",
-    "course": "B.Sc Physics (Hons)",
-    "payment": "confirmed",
-    "passReleased": true,
-    "passId": ""
-  },
-  {
-    "enrollment": "CSJMA26000004542",
-    "name": "Aniket Verma",
-    "course": "B.Sc Physics (Hons)",
-    "payment": "confirmed",
-    "passReleased": true,
->>>>>>> e14bc8e0e1008fceb545386e395c1d46672cabbc
     "passId": ""
   },
   {
