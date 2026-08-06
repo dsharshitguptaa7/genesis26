@@ -70,6 +70,12 @@ will be released
 
 </p>
 
+<p style="margin-top:12px; color:#C9A227; font-weight:700;">
+
+Note: Payment confirmation may appear after a 24-hour wait.
+
+</p>
+
 `;
 
 }

@@ -2,127 +2,65 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesis'26 Payment Portal</title>
 
-<meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Genesis'26 Payment Portal</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="page-shell">
+    <div class="hero-copy" data-aos="fade-up">
+      <p class="eyebrow">Freshers' Welcome Event • School of Basic Sciences</p>
+      <h1>Where New <span>Beginnings</span> Bloom</h1>
+      <p class="hero-text">
+        Confirm your payment and step into the celebration with style, warmth, and unforgettable memories.
+      </p>
+    </div>
 
-<div class="container">
+    <div class="form-card">
+      <div class="card-top">
+        <h2>Payment Check</h2>
+        <p>Enter your enrollment details to view your registration status.</p>
+      </div>
 
-<div class="card">
+      <div class="note-box">
+        <p>💳 Please check your payment status after 24 hours for a smooth confirmation.</p>
+      </div>
 
-<h1>GENESIS'26</h1>
+      <form id="checkForm">
+        <div class="inputBox">
+          <label for="enrollment">Enrollment Number</label>
+          <input type="text" id="enrollment" required>
+        </div>
 
-<p class="subtitle">
+        <div class="inputBox">
+          <label for="course">Course</label>
+          <select id="course">
+            <option value="">Select Course</option>
+            <option>B.Sc Physics (Hons)</option>
+            <option>B.Sc Chemistry (Hons)</option>
+            <option>B.Sc Mathematics (Hons)</option>
+            <option>M.Sc Mathematics (AI & DS)</option>
+            <option>M.Sc Mathematics</option>
+            <option>M.Sc Physics</option>
+            <option>M.Sc Chemistry</option>
+          </select>
+        </div>
 
-Freshers Party Payment Confirmation
+        <button type="submit">Check Status</button>
+      </form>
 
-</p>
+      <div id="result" class="result-box" aria-live="polite"></div>
+    </div>
+  </div>
 
-<form id="checkForm">
-
-<div class="inputBox">
-
-<label>
-
-Enrollment Number
-
-</label>
-
-<input
-type="text"
-id="enrollment"
-required>
-
-</div>
-
-<div class="inputBox">
-
-<label>
-
-Course
-
-</label>
-
-<select id="course">
-
-<option value="">
-
-Select Course
-
-</option>
-
-<option>
-
-B.Sc Physics (Hons)
-
-</option>
-
-<option>
-
-B.Sc Chemistry (Hons)
-
-</option>
-
-<option>
-
-B.Sc Mathematics (Hons)
-
-</option>
-
-<option>
-
-M.Sc Mathematics (AI & DS)
-
-</option>
-
-<option>
-
-M.Sc Mathematics
-
-</option>
-
-<option>
-
-M.Sc Physics
-
-</option>
-
-<option>
-
-M.Sc Chemistry
-
-</option>
-
-</select>
-
-</div>
-
-<button>
-
-Check Status
-
-</button>
-
-</form>
-
-<div id="result"></div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
