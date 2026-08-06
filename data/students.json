@@ -92,7 +92,7 @@
     "name": "Manali Yadav",
     "course": "M.Sc Mathematics (AI & DS)",
     "payment": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   }
 ]
