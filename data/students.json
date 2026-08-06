@@ -1,25 +1,41 @@
 [ 
  {
-    "enrollment": "CSJMA26000004543",
-    "name": "Anirudh Tripathi",
-    "course": "B.Sc Physics (Hons)",
-    "payment": "confirmed",
-    "passReleased": true,
-    "passId": ""
-  },
-  {
     "enrollment": "CSJMA26000004542",
     "name": "Aniket Verma",
     "course": "B.Sc Physics (Hons)",
     "payment": "confirmed",
-    "passReleased": true,
+    "passReleased": false,
     "passId": ""
   },
   {
-    "enrollment": "240501002",
-    "name": "Rahul Singh",
+    "enrollment": "CSJMA26000004543",
+    "name": "Anirudh Tripathi",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006459",
+    "name": "Naim Ahmad",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001659",
+    "name": "Naveen Bansal",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004923",
+    "name": "Raunak Dwivedi",
     "course": "B.Sc Chemistry (Hons)",
-    "payment": "pending",
+    "payment": "confirmed",
     "passReleased": false,
     "passId": ""
   },
@@ -28,39 +44,55 @@
     "name": "Nandini Kumari",
     "course": "B.Sc Mathematics (Hons)",
     "payment": "confirmed",
-    "passReleased": true,
-    "passId": ""
-  },
-  {
-    "enrollment": "240501002",
-    "name": "Rahul Singh",
-    "course": "M.Sc Physics",
-    "payment": "pending",
     "passReleased": false,
     "passId": ""
   },
   {
-    "enrollment": "240501001",
-    "name": "Harshit Gupta",
-    "course": "M.Sc Chemistry",
+    "enrollment": "CSJMA26000004914",
+    "name": "Arya Bhukta",
+    "course": "B.Sc Mathematics (Hons)",
     "payment": "confirmed",
     "passReleased": false,
     "passId": ""
   },
   {
-    "enrollment": "240501002",
-    "name": "Rahul Singh",
-    "course": "M.Sc Mathematics",
-    "payment": "pending",
+    "enrollment": "CSJMA26000005636",
+    "name": "Sumit Raj",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
     "passReleased": false,
     "passId": ""
   },
   {
-    "enrollment": "CSJMA260000006143",
+    "enrollment": "CSJMA25250153316",
+    "name": "Sakshi Mishra",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000005235",
+    "name": "Ishaan Deep Singh Malhotra",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000006143",
     "name": "Harshit Gupta",
     "course": "M.Sc Mathematics (AI & DS)",
     "payment": "confirmed",
     "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000006138",
+    "name": "Manali Yadav",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "payment": "confirmed",
+    "passReleased": true,
     "passId": ""
   }
 ]
