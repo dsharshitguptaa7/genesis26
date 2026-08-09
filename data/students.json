@@ -1,19 +1,5 @@
-[
-  {
-    "enrollment": "CSJMA26000004542",
-    "name": "Aniket Verma",
-    "course": "B.Sc Physics (Hons)",
-    "year": "1st Year",
-    "formNo": "3",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Ishaan Deep Singh Malhotra",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
-  },
-  {
+[ 
+ {
     "enrollment": "CSJMA26000004543",
     "name": "Anirudh Tripathi",
     "course": "B.Sc Physics (Hons)",
@@ -47,6 +33,19 @@
     "course": "B.Sc Physics (Hons)",
     "year": "1st Year",
     "formNo": "6",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004542",
+    "name": "Aniket Verma",
+    "course": "B.Sc Physics (Hons)",
+    "year": "1st Year",
+    "formNo": "3",
     "mode": "Online",
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
@@ -290,8 +289,7 @@
     "amount": 400,
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   },
   {
@@ -304,8 +302,7 @@
     "amount": 400,
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   },
   {
@@ -417,12 +414,24 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
+    "passId": ""
+  },
+    {
+    "enrollment": "CSJMA250000000",
+    "name": "Ansh Sharma",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "2nd Year",
+    "formNo": "7",
+    "mode": "Cash",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
     "passId": ""
   },
   {
-    "enrollment": "CSJMA25000005235",
+    "enrollment": "CSJMA25250153316",
     "name": "Ishaan Deep Singh Malhotra",
     "course": "B.Sc Mathematics (Hons)",
     "year": "2nd Year",
@@ -431,27 +440,11 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": ""
   },
   {
-    "enrollment": "CSJMA25000000000",
-    "name": "Ansh Sharma",
-    "course": "B.Sc Mathematics (Hons)",
-    "year": "2nd Year",
-    "formNo": "",
-    "mode": "Cash",
-    "amount": 400,
-    "inCharge": "Ishaan Deep Singh Malhotra",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
-  },
-
-  {
-    "enrollment": "CSJMA26000001039",
+    "enrollment": "",
     "name": "Nashra Wazir",
     "course": "M.Sc Chemistry",
     "year": "1st Year",
@@ -469,7 +462,7 @@
     "name": "Pratham Singh",
     "course": "M.Sc Mathematics (AI & DS)",
     "year": "1st Year",
-    "formNo": "33",
+    "formNo": "",
     "mode": "Online",
     "amount": 400,
     "inCharge": "Vipin Kumar",
@@ -497,13 +490,13 @@
     "name": "Manali Yadav",
     "course": "M.Sc Mathematics (AI & DS)",
     "year": "2nd Year",
-    "formNo": "29",
+    "formNo": "",
     "mode": "Cash",
     "amount": 400,
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": true,
+    "passReleased": false,
     "passId": ""
   }
 ]
