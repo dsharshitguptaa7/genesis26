@@ -1,0 +1,2562 @@
+/* =========================================================
+   GENESIS'26 — ADMIN LEDGER
+   Admin Dashboard Styles
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --primary:#6d1f2a;
+    --primary-dark:#4f1520;
+    --primary-light:#8b3441;
+
+    --gold:#c9a227;
+    --gold-light:#dfc35a;
+
+    --cream:#f7f1e7;
+    --cream-dark:#eee3d2;
+
+    --white:#ffffff;
+
+    --text:#302b28;
+    --muted:#756d66;
+
+    --border:#e5d8c2;
+
+    --success:#278a55;
+    --success-bg:#e8f6ee;
+
+    --warning:#b47718;
+    --warning-bg:#fff4dc;
+
+    --danger:#b13a3a;
+    --danger-bg:#fbe9e9;
+
+    --shadow:
+        0 15px 40px rgba(74, 37, 22, .08);
+
+    --shadow-hover:
+        0 20px 50px rgba(74, 37, 22, .13);
+
+    --radius:18px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9f4ec 0%,
+            #f4ecdf 100%
+        );
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+
+button{
+    cursor:pointer;
+}
+
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary);
+
+}
+
+
+.loader-content{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+.loader-logo{
+
+    font-family:'Cinzel',serif;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:var(--gold);
+
+    margin-bottom:10px;
+
+}
+
+
+.loader-content p{
+
+    font-size:13px;
+
+    opacity:.75;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.admin-login{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px 20px;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(201,162,39,.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(109,31,42,.10),
+            transparent 30%
+        ),
+
+        var(--cream);
+
+}
+
+
+.login-card{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:rgba(255,255,255,.90);
+
+    border:1px solid var(--border);
+
+    border-radius:26px;
+
+    padding:42px;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+/* Login icon */
+
+.login-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(109,31,42,.08);
+
+    color:var(--primary);
+
+    font-size:27px;
+
+}
+
+
+.login-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.login-header span{
+
+    display:block;
+
+    font-family:'Cinzel',serif;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:var(--gold);
+
+    margin-bottom:6px;
+
+}
+
+
+.login-header h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:29px;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+
+.login-header p{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+
+.input-group label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:var(--text);
+
+}
+
+
+.input-wrapper{
+
+    position:relative;
+
+}
+
+
+.input-wrapper > i{
+
+    position:absolute;
+
+    left:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--gold);
+
+    font-size:14px;
+
+}
+
+
+.input-wrapper input{
+
+    width:100%;
+
+    height:50px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#fffdf9;
+
+    outline:none;
+
+    padding:0 45px;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+
+.input-wrapper input:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(201,162,39,.10);
+
+}
+
+
+.password-toggle{
+
+    position:absolute;
+
+    right:14px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:0;
+
+    background:none;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+
+.password-toggle:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn{
+
+    width:100%;
+
+    min-height:52px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.login-btn:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(109,31,42,.20);
+
+}
+
+
+.login-message{
+
+    min-height:20px;
+
+    text-align:center;
+
+    margin-top:13px;
+
+    font-size:12px;
+
+}
+
+
+.login-note{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+
+.login-note i{
+
+    color:var(--gold);
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.admin-dashboard{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    min-height:78px;
+
+    padding:12px 5%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    background:rgba(255,253,249,.94);
+
+    border-bottom:1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+.dashboard-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+}
+
+
+.brand-mark{
+
+    width:46px;
+    height:46px;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:var(--gold);
+
+    font-family:'Cinzel',serif;
+
+    font-weight:700;
+
+    font-size:19px;
+
+}
+
+
+.brand-event{
+
+    display:block;
+
+    font-family:'Cinzel',serif;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+}
+
+
+.dashboard-brand h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:19px;
+
+    color:var(--primary);
+
+}
+
+
+.admin-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+.admin-user-info{
+
+    text-align:right;
+
+}
+
+
+.admin-user-info span{
+
+    display:block;
+
+    font-size:10px;
+
+    color:var(--muted);
+
+}
+
+
+.admin-user-info strong{
+
+    font-size:13px;
+
+    color:var(--primary);
+
+}
+
+
+.logout-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:9px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+.logout-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-color:var(--primary);
+
+}
+
+
+/* =========================================================
+   DASHBOARD INTRO
+========================================================= */
+
+.dashboard-intro{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:45px auto 25px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+
+.eyebrow{
+
+    display:block;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+    margin-bottom:7px;
+
+}
+
+
+.dashboard-intro h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:34px;
+
+    color:var(--primary);
+
+    margin-bottom:7px;
+
+}
+
+
+.dashboard-intro p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+.last-updated{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    white-space:nowrap;
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+
+.last-updated i{
+
+    color:var(--gold);
+
+}
+
+
+.last-updated strong{
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.summary-grid{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto 30px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+
+.summary-card{
+
+    min-height:120px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:0 8px 25px rgba(74,37,22,.05);
+
+    transition:.3s;
+
+}
+
+
+.summary-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+.summary-icon{
+
+    width:52px;
+    height:52px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    font-size:20px;
+
+}
+
+
+.summary-icon.students{
+
+    background:#f3e9eb;
+    color:var(--primary);
+
+}
+
+
+.summary-icon.online{
+
+    background:#e9f5ef;
+    color:var(--success);
+
+}
+
+
+.summary-icon.cash{
+
+    background:#fff4df;
+    color:var(--warning);
+
+}
+
+
+.summary-icon.total{
+
+    background:#f2ecdc;
+    color:var(--gold);
+
+}
+
+
+.summary-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-bottom:4px;
+
+}
+
+
+.summary-card strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-size:23px;
+
+}
+
+
+/* =========================================================
+   FILTER SECTION
+========================================================= */
+
+.filter-section{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto 30px;
+
+    padding:28px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:0 8px 25px rgba(74,37,22,.04);
+
+}
+
+
+.filter-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:22px;
+
+}
+
+
+.filter-header h3{
+
+    font-family:'Cinzel',serif;
+
+    font-size:21px;
+
+    color:var(--primary);
+
+    margin-bottom:5px;
+
+}
+
+
+.filter-header p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.reset-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:9px 14px;
+
+    background:transparent;
+
+    color:var(--primary);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+.reset-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-color:var(--primary);
+
+}
+
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.filter-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr
+        1.4fr;
+
+    gap:15px;
+
+}
+
+
+.filter-group label{
+
+    display:block;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    margin-bottom:7px;
+
+}
+
+
+.filter-group select,
+.search-wrapper input{
+
+    width:100%;
+
+    height:45px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:#fffdf9;
+
+    padding:0 13px;
+
+    color:var(--text);
+
+    font-size:12px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+
+.filter-group select:focus,
+.search-wrapper input:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(201,162,39,.08);
+
+}
+
+
+.search-wrapper{
+
+    position:relative;
+
+}
+
+
+.search-wrapper i{
+
+    position:absolute;
+
+    left:13px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--gold);
+
+    font-size:12px;
+
+}
+
+
+.search-wrapper input{
+
+    padding-left:36px;
+
+}
+
+
+/* =========================================================
+   LEDGER
+========================================================= */
+
+.ledger-section{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto 40px;
+
+}
+
+
+.ledger-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+/* Course block */
+
+.course-block{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px rgba(74,37,22,.04);
+
+}
+
+
+.course-header{
+
+    padding:25px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+}
+
+
+.course-title{
+
+    font-family:'Cinzel',serif;
+
+    font-size:22px;
+
+    margin-bottom:5px;
+
+}
+
+
+.course-incharge{
+
+    font-size:11px;
+
+    opacity:.8;
+
+}
+
+
+.course-total{
+
+    text-align:right;
+
+}
+
+
+.course-total span{
+
+    display:block;
+
+    font-size:10px;
+
+    opacity:.7;
+
+}
+
+
+.course-total strong{
+
+    display:block;
+
+    font-size:21px;
+
+    color:var(--gold-light);
+
+}
+
+
+/* Year block */
+
+.year-block{
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.year-block:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.year-header{
+
+    padding:16px 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:#fcf8f1;
+
+}
+
+
+.year-header h4{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--primary);
+
+    font-size:16px;
+
+}
+
+
+.year-count{
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    background:#f2e8d7;
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+
+.ledger-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:760px;
+
+}
+
+
+.ledger-table th{
+
+    padding:13px 18px;
+
+    background:#fffdf9;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--muted);
+
+    text-align:left;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+.ledger-table td{
+
+    padding:15px 18px;
+
+    border-bottom:1px solid #f0e9dd;
+
+    color:var(--text);
+
+    font-size:12px;
+
+}
+
+
+.ledger-table tbody tr{
+
+    transition:.2s;
+
+}
+
+
+.ledger-table tbody tr:hover{
+
+    background:#fffaf2;
+
+}
+
+
+.ledger-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+
+.student-name{
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+
+.enrollment-number{
+
+    font-family:monospace;
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.mode-badge,
+.status-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+
+.mode-online{
+
+    background:#e8f6ee;
+
+    color:var(--success);
+
+}
+
+
+.mode-cash{
+
+    background:#fff3dc;
+
+    color:var(--warning);
+
+}
+
+
+.status-confirmed{
+
+    background:var(--success-bg);
+
+    color:var(--success);
+
+}
+
+
+.status-pending{
+
+    background:var(--warning-bg);
+
+    color:var(--warning);
+
+}
+
+
+.status-rejected{
+
+    background:var(--danger-bg);
+
+    color:var(--danger);
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state{
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+}
+
+
+.empty-state i{
+
+    font-size:40px;
+
+    color:var(--gold);
+
+    margin-bottom:18px;
+
+}
+
+
+.empty-state h3{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--primary);
+
+    margin-bottom:7px;
+
+}
+
+
+.empty-state p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   COLLECTION SUMMARY
+========================================================= */
+
+.collection-section{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto 50px;
+
+}
+
+
+.section-title{
+
+    margin-bottom:20px;
+
+}
+
+
+.section-title h2{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--primary);
+
+    font-size:25px;
+
+}
+
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+
+.collection-card{
+
+    padding:22px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.collection-icon{
+
+    width:45px;
+    height:45px;
+
+    flex-shrink:0;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f3e9eb;
+
+    color:var(--primary);
+
+}
+
+
+.collection-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-bottom:4px;
+
+}
+
+
+.collection-card strong{
+
+    color:var(--primary);
+
+    font-size:19px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.admin-footer{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:25px 0 35px;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+}
+
+
+.admin-footer strong{
+
+    display:block;
+
+    font-family:'Cinzel',serif;
+
+    color:var(--primary);
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+
+.admin-footer span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:3px;
+
+}
+
+
+.admin-footer p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    .summary-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .collection-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .filter-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .search-group{
+
+        grid-column:1 / -1;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .dashboard-header{
+
+        padding:12px 20px;
+
+    }
+
+
+    .dashboard-brand h1{
+
+        font-size:15px;
+
+    }
+
+
+    .brand-mark{
+
+        width:40px;
+        height:40px;
+
+        font-size:16px;
+
+    }
+
+
+    .admin-user-info{
+
+        display:none;
+
+    }
+
+
+    .logout-btn{
+
+        padding:9px 11px;
+
+    }
+
+
+    .logout-btn{
+
+        font-size:0;
+
+    }
+
+
+    .logout-btn i{
+
+        font-size:14px;
+
+        margin:0;
+
+    }
+
+
+    .dashboard-intro{
+
+        width:calc(100% - 40px);
+
+        margin-top:35px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .dashboard-intro h2{
+
+        font-size:27px;
+
+    }
+
+
+    .summary-grid{
+
+        width:calc(100% - 40px);
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .filter-section{
+
+        width:calc(100% - 40px);
+
+        padding:22px 18px;
+
+    }
+
+
+    .filter-header{
+
+        align-items:flex-start;
+
+    }
+
+
+    .filter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .search-group{
+
+        grid-column:auto;
+
+    }
+
+
+    .ledger-section,
+    .collection-section{
+
+        width:calc(100% - 40px);
+
+    }
+
+
+    .course-header{
+
+        padding:22px 20px;
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    .course-title{
+
+        font-size:19px;
+
+    }
+
+
+    .course-total{
+
+        text-align:left;
+
+    }
+
+
+    .year-header{
+
+        padding:14px 18px;
+
+    }
+
+
+    .table-wrapper{
+
+        overflow-x:auto;
+
+    }
+
+
+    .collection-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .admin-footer{
+
+        width:calc(100% - 40px);
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media(max-width:480px){
+
+    .login-card{
+
+        padding:30px 22px;
+
+        border-radius:20px;
+
+    }
+
+
+    .login-header h1{
+
+        font-size:25px;
+
+    }
+
+
+    .dashboard-header{
+
+        min-height:68px;
+
+    }
+
+
+    .dashboard-brand{
+
+        gap:9px;
+
+    }
+
+
+    .brand-event{
+
+        font-size:8px;
+
+    }
+
+
+    .dashboard-brand h1{
+
+        font-size:13px;
+
+    }
+
+
+    .summary-card{
+
+        padding:20px;
+
+    }
+
+
+    .summary-card strong{
+
+        font-size:21px;
+
+    }
+
+
+    .filter-header{
+
+        flex-direction:column;
+
+    }
+
+
+    .reset-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+/* =========================================================
+   FINANCE & EXPENSE OVERVIEW
+========================================================= */
+
+.finance-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.finance-section .section-title {
+    margin-bottom: 22px;
+}
+
+.finance-section .section-title p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FINANCE SUMMARY CARDS
+========================================================= */
+
+.finance-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+
+.finance-card {
+    min-height: 118px;
+    padding: 23px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    box-shadow:
+        0 8px 25px rgba(74, 37, 22, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.finance-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 35px rgba(74, 37, 22, 0.09);
+}
+
+
+/* =========================================================
+   FINANCE ICONS
+========================================================= */
+
+.finance-card-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+.received-card .finance-card-icon {
+    background: #e8f6ee;
+    color: var(--success);
+}
+
+
+.expense-card .finance-card-icon {
+    background: #fbe9e9;
+    color: var(--danger);
+}
+
+
+.balance-card .finance-card-icon {
+    background: #f2ecdc;
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   FINANCE CARD TEXT
+========================================================= */
+
+.finance-card span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    margin-bottom: 5px;
+}
+
+
+.finance-card strong {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EXPENSE REGISTER
+========================================================= */
+
+.expense-register {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(74, 37, 22, 0.04);
+}
+
+
+/* =========================================================
+   EXPENSE HEADER
+========================================================= */
+
+.expense-register-header {
+    padding: 24px 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: #fffdf9;
+}
+
+
+.expense-register-header h3 {
+    margin: 0 0 5px;
+
+    font-family: 'Cinzel', serif;
+
+    color: var(--primary);
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+.expense-register-header p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+.expense-register-header p strong {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   EXPENSE TOTAL BADGE
+========================================================= */
+
+.expense-total-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    background: #fbe9e9;
+
+    color: var(--danger);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+
+.expense-total-badge i {
+    font-size: 13px;
+}
+
+
+.expense-total-badge strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EXPENSE CONTAINER
+========================================================= */
+
+.expense-container {
+    width: 100%;
+}
+
+
+.expense-container .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   EXPENSE TABLE
+========================================================= */
+
+.expense-table {
+    width: 100%;
+    min-width: 720px;
+
+    border-collapse: collapse;
+}
+
+
+.expense-table th {
+    background: #fcf8f1;
+}
+
+
+.expense-table td {
+    vertical-align: middle;
+}
+
+
+.expense-table td:nth-child(2) {
+    white-space: nowrap;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.expense-table td:nth-child(3) {
+    color: var(--primary);
+}
+
+
+.expense-table td:last-child {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BALANCE CALCULATION
+========================================================= */
+
+.balance-calculation {
+    max-width: 650px;
+
+    margin: 25px 0 0 auto;
+
+    padding: 24px 28px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 8px 25px rgba(74, 37, 22, 0.04);
+}
+
+
+.calculation-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 10px 0;
+
+    font-size: 13px;
+}
+
+
+.calculation-row span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--muted);
+}
+
+
+.calculation-row span i {
+    color: var(--success);
+
+    font-size: 11px;
+}
+
+
+.calculation-row strong {
+    color: var(--primary);
+
+    font-size: 15px;
+}
+
+
+.calculation-row.expense-row span i {
+    color: var(--danger);
+}
+
+
+.calculation-row.expense-row strong {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.calculation-divider {
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 8px 0;
+}
+
+
+/* =========================================================
+   FINAL BALANCE
+========================================================= */
+
+.calculation-row.final-balance {
+    padding-top: 17px;
+}
+
+
+.final-balance span {
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.final-balance span i {
+    color: var(--gold);
+}
+
+
+.final-balance strong {
+    color: var(--success);
+
+    font-size: 22px;
+}
+
+
+.balance-positive {
+    color: var(--success) !important;
+}
+
+
+.balance-negative {
+    color: var(--danger) !important;
+}
+
+
+/* =========================================================
+   EXPENSE EMPTY STATE
+========================================================= */
+
+.expense-container .empty-state {
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    padding: 55px 25px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .finance-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .balance-card {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .finance-section {
+        width: calc(100% - 40px);
+
+        margin-bottom: 45px;
+    }
+
+
+    .finance-summary {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .balance-card {
+        grid-column: auto;
+    }
+
+
+    .finance-card {
+        min-height: 105px;
+
+        padding: 20px;
+    }
+
+
+    .finance-card-icon {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 13px;
+
+        font-size: 17px;
+    }
+
+
+    .finance-card strong {
+        font-size: 21px;
+    }
+
+
+    .expense-register-header {
+        padding: 20px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .expense-total-badge {
+        width: 100%;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+
+    .balance-calculation {
+        max-width: none;
+
+        padding: 21px 20px;
+    }
+
+
+    .calculation-row {
+        font-size: 12px;
+    }
+
+
+    .calculation-row strong {
+        font-size: 14px;
+    }
+
+
+    .final-balance strong {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .finance-section {
+        width: calc(100% - 28px);
+    }
+
+
+    .finance-card {
+        gap: 13px;
+
+        padding: 18px;
+    }
+
+
+    .finance-card-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .finance-card span {
+        font-size: 10px;
+    }
+
+
+    .finance-card strong {
+        font-size: 19px;
+    }
+
+
+    .expense-register-header h3 {
+        font-size: 17px;
+    }
+
+
+    .expense-register-header p {
+        font-size: 10px;
+    }
+
+
+    .balance-calculation {
+        padding: 18px;
+    }
+
+}

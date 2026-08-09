@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Genesis'26 | Admin Ledger</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet"
+          href="css/admin.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         Page Loader
+    ========================== -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                GENESIS'26
+            </div>
+
+            <p>
+                Loading Admin Portal...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         Admin Login
+    ========================== -->
+
+    <section class="admin-login"
+             id="adminLogin">
+
+        <div class="login-card">
+
+            <div class="login-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+
+            <div class="login-header">
+
+                <span>
+                    GENESIS'26
+                </span>
+
+                <h1>
+                    Admin Portal
+                </h1>
+
+                <p>
+                    Secure access to the Genesis'26 ledger.
+                </p>
+
+            </div>
+
+
+            <form id="adminLoginForm">
+
+
+                <div class="input-group">
+
+                    <label for="adminUsername">
+                        Admin ID
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="adminUsername"
+                            placeholder="Enter Admin ID"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter Password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    <span>
+                        Login to Dashboard
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                    aria-live="polite">
+                </div>
+
+            </form>
+
+
+            <div class="login-note">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Authorized Genesis'26 heads only.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         Admin Dashboard
+    ========================== -->
+
+    <main id="adminDashboard"
+          class="admin-dashboard"
+          style="display:none;">
+
+
+
+        <!-- =========================
+             Dashboard Header
+        ========================== -->
+
+        <header class="dashboard-header">
+
+
+            <div class="dashboard-brand">
+
+                <div class="brand-mark">
+
+                    <span>
+                        G
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <span class="brand-event">
+                        GENESIS'26
+                    </span>
+
+                    <h1>
+                        Finance & Ledger
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-user">
+
+                <div class="admin-user-info">
+
+                    <span>
+                        Logged in as
+                    </span>
+
+                    <strong id="loggedInAdmin">
+                        Admin
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="index.html"
+                    class="admin-back-link"
+                    title="Back to Payment Verification">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Verification
+
+                </a>
+
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             Dashboard Intro
+        ========================== -->
+
+        <section class="dashboard-intro">
+
+            <div>
+
+                <span class="eyebrow">
+                    ADMIN DASHBOARD
+                </span>
+
+                <h2>
+                    Genesis'26 Ledger
+                </h2>
+
+                <p>
+                    View registration and payment records
+                    from the central student database.
+                </p>
+
+            </div>
+
+
+            <div class="last-updated">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <span>
+                    Last updated:
+                </span>
+
+                <strong id="lastUpdated">
+                    —
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Summary Cards
+        ========================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon students">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon online">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Online Collection
+                    </span>
+
+                    <strong id="onlineCollection">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon cash">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Cash Collection
+                    </span>
+
+                    <strong id="cashCollection">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon total">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Received
+                    </span>
+
+                    <strong id="totalCollection">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Filters
+        ========================== -->
+
+        <section class="filter-section">
+
+
+            <div class="filter-header">
+
+                <div>
+
+                    <h3>
+                        Ledger Records
+                    </h3>
+
+                    <p>
+                        Filter student records by course,
+                        year, mode or payment status.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="resetFilters"
+                    class="reset-btn">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+
+
+            <div class="filter-grid">
+
+
+                <div class="filter-group">
+
+                    <label for="courseFilter">
+                        Course
+                    </label>
+
+                    <select id="courseFilter">
+
+                        <option value="">
+                            All Courses
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="yearFilter">
+                        Year
+                    </label>
+
+                    <select id="yearFilter">
+
+                        <option value="">
+                            All Years
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="modeFilter">
+                        Payment Mode
+                    </label>
+
+                    <select id="modeFilter">
+
+                        <option value="">
+                            All Modes
+                        </option>
+
+                        <option value="Online">
+                            Online
+                        </option>
+
+                        <option value="Cash">
+                            Cash
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group search-group">
+
+                    <label for="studentSearch">
+                        Search
+                    </label>
+
+                    <div class="search-wrapper">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="studentSearch"
+                            placeholder="Name or enrollment number"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Course / Year Ledger
+        ========================== -->
+
+        <section class="ledger-section">
+
+            <div
+                id="ledgerContainer"
+                class="ledger-container">
+
+                <!--
+                    JS will generate:
+
+                    Course
+                    In-charge
+                    Year
+                    Student Table
+
+                    dynamically from students.json
+                -->
+
+                <div class="empty-state">
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    <h3>
+                        No Records Loaded
+                    </h3>
+
+                    <p>
+                        Student ledger data will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Collection Summary
+        ========================== -->
+
+        <section class="collection-section">
+
+
+            <div class="section-title">
+
+                <span class="eyebrow">
+                    FINANCIAL OVERVIEW
+                </span>
+
+                <h2>
+                    Collection Summary
+                </h2>
+
+            </div>
+
+
+
+            <div class="collection-grid">
+
+
+                <div class="collection-card">
+
+                    <div class="collection-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Confirmed Transactions
+                        </span>
+
+                        <strong id="confirmedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="collection-card">
+
+                    <div class="collection-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Confirmed Amount
+                        </span>
+
+                        <strong id="confirmedAmount">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="collection-card">
+
+                    <div class="collection-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Records
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="collection-card">
+
+                    <div class="collection-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Rejected Records
+                        </span>
+
+                        <strong id="rejectedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- =========================
+             Finance & Expense Overview
+        ========================== -->
+
+        <section class="finance-section">
+
+            <div class="section-title">
+
+                <span class="eyebrow">
+                    FINANCE & EXPENSES
+                </span>
+
+                <h2>
+                    Expense & Balance Overview
+                </h2>
+
+                <p>
+                    Track outgoing payments and the current Genesis'26 event balance.
+                </p>
+
+            </div>
+
+
+            <!-- Finance Summary -->
+
+            <div class="finance-summary">
+
+                <!-- Total Received -->
+
+                <div class="finance-card received-card">
+
+                    <div class="finance-card-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Received
+                        </span>
+
+                        <strong id="financeTotalReceived">
+                            ₹0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Total Expenses -->
+
+                <div class="finance-card expense-card">
+
+                    <div class="finance-card-icon">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Expenses
+                        </span>
+
+                        <strong id="totalExpenses">
+                            ₹0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Remaining Balance -->
+
+                <div class="finance-card balance-card">
+
+                    <div class="finance-card-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Remaining Balance
+                        </span>
+
+                        <strong id="remainingBalance">
+                            ₹0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Expense Register -->
+
+            <div class="expense-register">
+
+                <div class="expense-register-header">
+
+                    <div>
+
+                        <h3>
+                            Expense Register
+                        </h3>
+
+                        <p>
+                            All outgoing payment records fetched from
+                            <strong>expenses.json</strong>.
+                        </p>
+
+                    </div>
+
+
+                    <div class="expense-total-badge">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <span>
+                            Total:
+                        </span>
+
+                        <strong id="expenseTableTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JavaScript renders expenses here -->
+
+                <div
+                    id="expenseContainer"
+                    class="expense-container">
+
+                    <div class="empty-state">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <h3>
+                            No Expenses Recorded
+                        </h3>
+
+                        <p>
+                            Expense records will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Balance Calculation -->
+
+            <div class="balance-calculation">
+
+                <div class="calculation-row">
+
+                    <span>
+                        <i class="fa-solid fa-circle-plus"></i>
+                        Total Received
+                    </span>
+
+                    <strong id="balanceReceived">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-row expense-row">
+
+                    <span>
+                        <i class="fa-solid fa-circle-minus"></i>
+                        Total Expenses
+                    </span>
+
+                    <strong id="balanceExpenses">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-divider"></div>
+
+
+                <div class="calculation-row final-balance">
+
+                    <span>
+                        <i class="fa-solid fa-wallet"></i>
+                        Remaining Balance
+                    </span>
+
+                    <strong id="balanceRemaining">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Footer
+        ========================== -->
+
+        <footer class="admin-footer">
+
+            <div>
+
+                <strong>
+                    GENESIS'26
+                </strong>
+
+                <span>
+                    Finance & Technical Operations
+                </span>
+
+            </div>
+
+
+            <p>
+                Internal Admin Portal • Genesis'26
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- Admin JS -->
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

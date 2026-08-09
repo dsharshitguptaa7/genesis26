@@ -225,3 +225,14 @@ button:hover {
   }
 
 }
+
+.admin-link{
+    font-size:11px;
+    color:#777;
+    text-decoration:none;
+    opacity:.6;
+}
+
+.admin-link:hover{
+    opacity:1;
+}
