@@ -1146,7 +1146,7 @@ function updateSummary(data) {
     setText(
         totalCollection,
         formatCurrency(
-            totalReceived
+            confirmedTotal
         )
     );
 

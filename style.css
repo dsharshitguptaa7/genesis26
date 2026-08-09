@@ -204,10 +204,10 @@ button:hover {
 }
 
 .admin-link{
-    font-size:11px;
-    color:#777;
-    text-decoration:none;
-    opacity:.6;
+    font-size:15px;
+    color:#4F1721;
+    text-decoration:rgba(109, 31, 42, 0.12);
+    opacity:.9;
 }
 
 .admin-link:hover{
