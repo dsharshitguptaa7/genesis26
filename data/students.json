@@ -31,9 +31,161 @@
     "passReleased": false,
     "passId": ""
   },
+   {
+    "enrollment": "CSJMA26000001656",
+    "name": "Vineet Kumar Jaiswal",
+    "course": "B.Sc Physics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
   {
     "enrollment": "CSJMA26000004923",
     "name": "Raunak Dwivedi",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001643",
+    "name": "Iliyas Ali",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004539",
+    "name": "Vidisha Meena",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006148",
+    "name": "Aditya Bharadwaj",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001644",
+    "name": "Ndini Kumar",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006882",
+    "name": "Anuradha Shukla",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006457",
+    "name": "Janvi Sharma",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006884",
+    "name": "Mahi Mishra",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001650",
+    "name": "Kislay Srivastava",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001641",
+    "name": "Ayushi Mehto",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001647",
+    "name": "Khushi Bansal",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006880",
+    "name": "Saksham Batham",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000005639",
+    "name": "Ragini Sharma",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004539",
+    "name": "Vidisha Meena",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000005640",
+    "name":"Ansh Pratap Singh",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25250101501",
+    "name": "Neha Singh Chauhan",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000004951",
+    "name":"Shlok Srivastava",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000004954",
+    "name":"Chitra Mishra",
+    "course": "B.Sc Chemistry (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA25000004955",
+    "name":"Anshika Singh",
     "course": "B.Sc Chemistry (Hons)",
     "payment": "confirmed",
     "passReleased": false,
@@ -64,6 +216,30 @@
     "passId": ""
   },
   {
+    "enrollment": "CSJMA26000006875",
+    "name": "Deepali",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000006877",
+    "name": "Utkarsh Chaturvedi",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000004917",
+    "name": "Ajay Kumar",
+    "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
     "enrollment": "CSJMA25250153316",
     "name": "Sakshi Mishra",
     "course": "B.Sc Mathematics (Hons)",
@@ -75,6 +251,22 @@
     "enrollment": "CSJMA25000005235",
     "name": "Ishaan Deep Singh Malhotra",
     "course": "B.Sc Mathematics (Hons)",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMA26000001039",
+    "name": "Nashra Wazir",
+    "course": "M.Sc Chemistry",
+    "payment": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
+    "enrollment": "CSJMU262721190",
+    "name": "Pratham Singh",
+    "course": "M.Sc Mathematics (AI & DS)",
     "payment": "confirmed",
     "passReleased": false,
     "passId": ""
