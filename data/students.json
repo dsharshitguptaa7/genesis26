@@ -419,6 +419,20 @@
     "passId": ""
   },
   {
+    "enrollment": "CSJMA26000006453",
+    "name": "Akshar Shivhare",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "40",
+    "mode": "Cash",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
     "enrollment": "CSJMA25250153316",
     "name": "Sakshi Mishra",
     "course": "B.Sc Mathematics (Hons)",
