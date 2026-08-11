@@ -472,6 +472,19 @@
     "passId": ""
   },
   {
+    "enrollment": "CSJMA24000002419",
+    "name": "Mandavi Tiwari",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "3rd Year",
+    "formNo": "42",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": ""
+  },
+  {
     "enrollment": "",
     "name": "Nashra Wazir",
     "course": "M.Sc Chemistry",
