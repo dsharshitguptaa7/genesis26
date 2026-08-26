@@ -697,6 +697,20 @@
     "passId": ""
   },
   {
+    "enrollment": "CSJMA26000007293",
+    "name": "Divya Agrawal",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "80",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": false,
+    "passId": ""
+  },
+  {
     "enrollment": "CSJMA25250153316",
     "name": "Sakshi Mishra",
     "course": "B.Sc Mathematics (Hons)",
