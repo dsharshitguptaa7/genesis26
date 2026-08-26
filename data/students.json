@@ -139,20 +139,6 @@
     "passId": ""
   },
   {
-    "enrollment": "CSJMA26000004925",
-    "name": "Ambika Yadav",
-    "course": "B.Sc Physics (Hons)",
-    "year": "1st Year",
-    "formNo": "49",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Shivanshu",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
-  },
-  {
     "enrollment": "CSJMA26000001655",
     "name": "Divyanshu Pratap Singh",
     "course": "B.Sc Physics (Hons)",
@@ -599,20 +585,6 @@
     "passId": ""
   },
   {
-    "enrollment": "CSJMA25000004947",
-    "name": "Pragati Kushwaha",
-    "course": "B.Sc Chemistry (Hons)",
-    "year": "2nd Year",
-    "formNo": "78",
-    "mode": "Cash",
-    "amount": 400,
-    "inCharge": "Sanyogita Omar",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
-  },
-  {
     "enrollment": "CSJMA25000004949",
     "name": "Sanyogita Omar",
     "course": "B.Sc Chemistry (Hons)",
@@ -751,7 +723,7 @@
     "passId": ""
   },
   {
-    "enrollment": "CSJMA25250153316",
+    "enrollment": "CSJMA25000005235",
     "name": "Ishaan Deep Singh Malhotra",
     "course": "B.Sc Mathematics (Hons)",
     "year": "2nd Year",
