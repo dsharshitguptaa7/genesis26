@@ -1678,6 +1678,34 @@ a{
 }
 
 
+.admin-dev-credit strong{
+
+    display:inline;
+
+    font-family:inherit;
+
+    color:var(--primary);
+
+    font-size:inherit;
+
+    letter-spacing:normal;
+
+}
+
+
+.admin-dev-credit span{
+
+    display:inline;
+
+    color:inherit;
+
+    font-size:inherit;
+
+    margin-top:0;
+
+}
+
+
 /* =========================================================
    RESPONSIVE — TABLET
 ========================================================= */

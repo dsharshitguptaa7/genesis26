@@ -30,9 +30,10 @@ body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--brown);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 16px;
+    padding: 30px 16px 20px;
 }
 
 body::before {
@@ -48,6 +49,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 /* =========================================================
@@ -424,6 +426,41 @@ body::before {
     .pass-id-value {
         font-size: 16px;
     }
+
+    .site-footer {
+        font-size: 12px;
+        padding: 14px 12px 18px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.site-footer {
+    width: 100%;
+    max-width: 440px;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 16px 20px 20px;
+    color: var(--brown);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.site-footer strong {
+    color: var(--maroon);
+    font-weight: 600;
+}
+
+.site-footer span {
+    opacity: 0.85;
 }
 
 /* =========================================================
@@ -505,11 +542,12 @@ body::before {
         margin-bottom: 0 !important;
     }
 
-    /* Hide action buttons and navigation in print */
+    /* Hide action buttons, navigation, and footer in print */
     .pass-actions,
     .btn-download,
     .btn-back,
-    .btn-error-return {
+    .btn-error-return,
+    .site-footer {
         display: none !important;
     }
 }

@@ -28,7 +28,9 @@ body {
   background: linear-gradient(135deg, rgba(248, 243, 234, 0.95), rgba(255, 253, 248, 0.95));
   color: var(--text);
   overflow-x: hidden;
-  padding: 24px;
+  padding: 24px 24px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body::before {
@@ -40,14 +42,16 @@ body::before {
 }
 
 .page-shell {
-  min-height: 100vh;
+  min-height: auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 20px 0 30px;
+  flex: 1;
+  width: 100%;
 }
 
 .hero-copy {
@@ -317,13 +321,81 @@ button:hover {
   font-weight: bold;
 }
 
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.site-footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 20px 24px;
+  color: var(--text);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.site-footer strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.site-footer span {
+  opacity: 0.85;
+}
+
+.footer-admin {
+  margin-top: 8px;
+}
+
 .admin-link {
-  font-size: 15px;
-  color: #4F1721;
-  text-decoration: rgba(109, 31, 42, 0.12);
-  opacity: .9;
+  font-size: 12.5px;
+  color: var(--primary);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
 .admin-link:hover {
   opacity: 1;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+========================================================= */
+
+@media (max-width: 900px) {
+  .page-shell {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 10px 0 24px;
+  }
+
+  .hero-copy {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px 16px 0;
+  }
+
+  .site-footer {
+    font-size: 12px;
+    padding: 16px 12px 20px;
+    line-height: 1.6;
+  }
 }
