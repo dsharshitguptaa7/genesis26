@@ -1,0 +1,515 @@
+/* =========================================================
+   GENESIS'26 — DIGITAL ENTRY PASS STYLES
+   Maroon & Beige Luxury Event Theme
+========================================================= */
+
+:root {
+    --maroon: #6D1F2A;
+    --maroon-dark: #571821;
+    --burgundy: #8B2635;
+    --beige: #F5EBDD;
+    --cream: #FFFDF8;
+    --gold: #C9A227;
+    --gold-light: #E5C358;
+    --brown: #3D2B1F;
+    --border: #D8C7AE;
+    --success: #2E7D32;
+    --error: #8B2635;
+    --shadow: 0 20px 50px rgba(61, 43, 31, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 20%, #FFF9F0 0%, var(--beige) 100%);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(201, 162, 39, 0.12), transparent 40%);
+    pointer-events: none;
+}
+
+.pass-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================================
+   PASS CARD CONTAINER
+========================================================= */
+
+.pass-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    animation: passAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes passAppear {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   PASS HEADER
+========================================================= */
+
+.pass-header {
+    background: linear-gradient(135deg, var(--maroon), var(--burgundy));
+    color: #FFFFFF;
+    padding: 32px 24px 26px;
+    position: relative;
+}
+
+.pass-header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top center, rgba(201, 162, 39, 0.2), transparent 70%);
+    pointer-events: none;
+}
+
+.event-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.pass-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.event-subtitle {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* =========================================================
+   DECORATIVE GOLD LINE
+========================================================= */
+
+.gold-line {
+    height: 4px;
+    background: linear-gradient(90deg, #A8811A, var(--gold), #FFE885, var(--gold), #A8811A);
+}
+
+/* =========================================================
+   PASS BODY & DETAILS
+========================================================= */
+
+.pass-body {
+    padding: 24px 28px 28px;
+}
+
+.student-details {
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 16px;
+}
+
+.detail-row {
+    margin-bottom: 14px;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    display: block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #8C7360;
+    margin-bottom: 3px;
+}
+
+.detail-value {
+    display: block;
+    font-size: 16.5px;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+/* =========================================================
+   QR SECTION
+========================================================= */
+
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 18px 0 16px;
+}
+
+.qr-wrapper {
+    background: #FFFFFF;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(61, 43, 31, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#entryQR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#entryQR img,
+#entryQR canvas {
+    display: block;
+    max-width: 175px;
+    max-height: 175px;
+}
+
+.scan-text {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #8C7360;
+}
+
+/* =========================================================
+   PASS ID BADGE
+========================================================= */
+
+.pass-id-container {
+    margin: 16px 0 18px;
+    padding: 12px 16px;
+    border: 1.5px dashed var(--gold);
+    border-radius: 12px;
+    background: #FCF7EE;
+}
+
+.pass-id-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8C7360;
+    margin-bottom: 2px;
+}
+
+.pass-id-value {
+    display: block;
+    font-family: 'Cinzel', monospace, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--maroon);
+}
+
+/* =========================================================
+   VALIDITY STATUS
+========================================================= */
+
+.valid-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 6px 16px;
+    background: rgba(46, 125, 50, 0.08);
+    border-radius: 999px;
+}
+
+.status-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--success);
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-text {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--success);
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.pass-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-download {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--maroon), var(--burgundy));
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(109, 31, 42, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-download:hover {
+    background: var(--maroon-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(109, 31, 42, 0.35);
+}
+
+.btn-back {
+    display: inline-block;
+    color: var(--maroon);
+    font-size: 13.5px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px;
+    transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+    color: var(--maroon-dark);
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ERROR STATE CARD
+========================================================= */
+
+.error-card {
+    padding: 40px 28px;
+    text-align: center;
+    background: var(--cream);
+    border-radius: 24px;
+}
+
+.error-header {
+    background: var(--maroon);
+    color: #FFFFFF;
+    padding: 24px 20px;
+    border-radius: 16px 16px 0 0;
+    margin: -40px -28px 28px;
+}
+
+.error-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.error-card h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    color: var(--maroon);
+    margin-bottom: 12px;
+}
+
+.error-card p {
+    font-size: 14.5px;
+    color: #6F5A4B;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.btn-error-return {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: var(--maroon);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(109, 31, 42, 0.2);
+}
+
+.btn-error-return:hover {
+    background: var(--maroon-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .pass-header {
+        padding: 26px 18px 22px;
+    }
+
+    .pass-header h1 {
+        font-size: 30px;
+    }
+
+    .pass-body {
+        padding: 20px 18px 24px;
+    }
+
+    .detail-value {
+        font-size: 15px;
+    }
+
+    .pass-id-value {
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   PRINT STYLESHEET (Single-Page Optimized)
+========================================================= */
+
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+
+    *,
+    *::before,
+    *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    html, body {
+        background: #FFFFFF !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+
+    body::before {
+        display: none !important;
+    }
+
+    .pass-page {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        padding-top: 10mm !important;
+        width: 100% !important;
+    }
+
+    .pass-card {
+        box-shadow: none !important;
+        border: 1.5px solid #C5B095 !important;
+        max-width: 390px !important;
+        margin: 0 auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        background: #FFFDF8 !important;
+    }
+
+    .pass-header {
+        background: #6D1F2A !important;
+        color: #FFFFFF !important;
+        padding: 24px 20px 20px !important;
+    }
+
+    .pass-header h1 {
+        color: #FFFFFF !important;
+        font-size: 32px !important;
+    }
+
+    .gold-line {
+        background: #C9A227 !important;
+        height: 4px !important;
+    }
+
+    .pass-body {
+        padding: 18px 22px 20px !important;
+    }
+
+    .pass-id-container {
+        border-color: #C9A227 !important;
+        background: #FCF7EE !important;
+        margin: 12px 0 14px !important;
+        padding: 10px 14px !important;
+    }
+
+    .valid-status {
+        margin-bottom: 0 !important;
+    }
+
+    /* Hide action buttons and navigation in print */
+    .pass-actions,
+    .btn-download,
+    .btn-back,
+    .btn-error-return {
+        display: none !important;
+    }
+}

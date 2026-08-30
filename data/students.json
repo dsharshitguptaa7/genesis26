@@ -1,5 +1,5 @@
-[ 
- {
+[
+  {
     "enrollment": "CSJMA26000004543",
     "name": "Anirudh Tripathi",
     "course": "B.Sc Physics (Hons)",
@@ -10,8 +10,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AT7751"
   },
   {
     "enrollment": "CSJMA26000006459",
@@ -24,8 +24,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NA1635"
   },
   {
     "enrollment": "CSJMA26000001659",
@@ -38,7 +38,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-NB1659"
   },
   {
     "enrollment": "CSJMA26000004542",
@@ -51,8 +51,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AV5235"
   },
   {
     "enrollment": "CSJMA26000001656",
@@ -65,8 +65,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-VK5123"
   },
   {
     "enrollment": "CSJMA26000006160",
@@ -79,8 +79,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-RY6625"
   },
   {
     "enrollment": "CSJMA26000004925",
@@ -93,8 +93,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AY1136"
   },
   {
     "enrollment": "CSJMA26000005641",
@@ -107,8 +107,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-GM3965"
   },
   {
     "enrollment": "CSJMA26000004545",
@@ -121,8 +121,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-TM9955"
   },
   {
     "enrollment": "CSJMA26000006890",
@@ -135,8 +135,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PS7745"
   },
   {
     "enrollment": "CSJMA26000001655",
@@ -149,8 +149,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-DP1177"
   },
   {
     "enrollment": "CSJMA26000001660",
@@ -163,8 +163,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-MV5513"
   },
   {
     "enrollment": "CSJMA26000001658",
@@ -178,7 +178,7 @@
     "payment": "confirmed",
     "status": "confirmed",
     "passReleased": false,
-    "passId": ""
+    "passId": "GEN26-AP0036"
   },
   {
     "enrollment": "CSJMA25000004886",
@@ -192,7 +192,7 @@
     "payment": "confirmed",
     "status": "confirmed",
     "passReleased": false,
-    "passId": ""
+    "passId": "GEN26-PS4596"
   },
   {
     "enrollment": "CSJMA25000004892",
@@ -205,8 +205,8 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-HT9596"
   },
   {
     "enrollment": "CSJMA26000004923",
@@ -219,8 +219,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-RD6565"
   },
   {
     "enrollment": "CSJMA26000001643",
@@ -233,8 +233,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-IA1256"
   },
   {
     "enrollment": "CSJMA26000004539",
@@ -247,8 +247,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-VM1639"
   },
   {
     "enrollment": "CSJMA26000006148",
@@ -261,8 +261,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AB5237"
   },
   {
     "enrollment": "CSJMA26000001644",
@@ -275,8 +275,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NK5946"
   },
   {
     "enrollment": "CSJMA26000006882",
@@ -289,8 +289,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AS5523"
   },
   {
     "enrollment": "CSJMA26000006457",
@@ -303,8 +303,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-JS2595"
   },
   {
     "enrollment": "CSJMA26000006884",
@@ -317,8 +317,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-MM5475"
   },
   {
     "enrollment": "CSJMA26000001650",
@@ -331,8 +331,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-KS7835"
   },
   {
     "enrollment": "CSJMA26000001641",
@@ -345,8 +345,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AM9365"
   },
   {
     "enrollment": "CSJMA26000001647",
@@ -359,8 +359,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-KS7885"
   },
   {
     "enrollment": "CSJMA26000006880",
@@ -373,8 +373,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SB5235"
   },
   {
     "enrollment": "CSJMA26000005639",
@@ -387,8 +387,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-RS4466"
   },
   {
     "enrollment": "CSJMA26000005640",
@@ -401,8 +401,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AP5349"
   },
   {
     "enrollment": "CSJMA26000006879",
@@ -415,8 +415,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SK4478"
   },
   {
     "enrollment": "CSJMA26000006885",
@@ -429,8 +429,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AK4231"
   },
   {
     "enrollment": "CSJMA26000006975",
@@ -443,8 +443,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-VK4403"
   },
   {
     "enrollment": "CSJMA25250101501",
@@ -457,8 +457,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NS5235"
   },
   {
     "enrollment": "CSJMA25000004951",
@@ -471,7 +471,7 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-SS4951"
   },
   {
     "enrollment": "CSJMA25000004954",
@@ -484,7 +484,7 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-CM4954"
   },
   {
     "enrollment": "CSJMA25000004955",
@@ -497,8 +497,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AS5232"
   },
   {
     "enrollment": "CSJMA25000035546",
@@ -511,10 +511,10 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-RK5599"
   },
-   {
+  {
     "enrollment": "CSJMA25000004959",
     "name": "Siddhi Jain",
     "course": "B.Sc Chemistry (Hons)",
@@ -525,11 +525,11 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SJ5535"
   },
   {
-    "enrollment": "CSJMA2500004958",
+    "enrollment": "CSJMA25000004958",
     "name": "Riddhi Jain",
     "course": "B.Sc Chemistry (Hons)",
     "year": "2nd Year",
@@ -539,10 +539,10 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-RJ6635"
   },
-   {
+  {
     "enrollment": "CSJMA25250153320",
     "name": "Tanvi Shukla",
     "course": "B.Sc Chemistry (Hons)",
@@ -553,8 +553,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-TS5785"
   },
   {
     "enrollment": "CSJMA25000004956",
@@ -567,8 +567,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SK6696"
   },
   {
     "enrollment": "CSJMA25000004947",
@@ -581,8 +581,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PK4456"
   },
   {
     "enrollment": "CSJMA25000004949",
@@ -595,8 +595,8 @@
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SO9735"
   },
   {
     "enrollment": "CSJMA26000001607",
@@ -609,8 +609,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NK6643"
   },
   {
     "enrollment": "CSJMA26000004914",
@@ -623,8 +623,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AB3545"
   },
   {
     "enrollment": "CSJMA26000005636",
@@ -637,8 +637,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SR5965"
   },
   {
     "enrollment": "CSJMA26000006875",
@@ -651,8 +651,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-DK1246"
   },
   {
     "enrollment": "CSJMA26000006877",
@@ -665,8 +665,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-UC3597"
   },
   {
     "enrollment": "CSJMA26000004917",
@@ -679,8 +679,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AK3696"
   },
   {
     "enrollment": "CSJMA26000006453",
@@ -693,8 +693,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AS3596"
   },
   {
     "enrollment": "CSJMA26000007293",
@@ -707,8 +707,8 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-DA5296"
   },
   {
     "enrollment": "CSJMA25250153316",
@@ -721,9 +721,9 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-SM5316"
   },
-    {
+  {
     "enrollment": "CSJMA25000013504",
     "name": "Ansh Sharma",
     "course": "B.Sc Mathematics (Hons)",
@@ -734,7 +734,7 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-AS1350"
   },
   {
     "enrollment": "CSJMA25000005235",
@@ -747,7 +747,7 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-ID5235"
   },
   {
     "enrollment": "CSJMA24000002419",
@@ -760,7 +760,7 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-MT2419"
   },
   {
     "enrollment": "CSJMA24000002415",
@@ -773,7 +773,7 @@
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
     "passReleased": true,
-    "passId": ""
+    "passId": "GEN26-AS2415"
   },
   {
     "enrollment": "CSJMA26000006138",
@@ -786,8 +786,8 @@
     "inCharge": "Aryan Raj",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-DG5445"
   },
   {
     "enrollment": "CSJMA26000001039",
@@ -800,8 +800,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NW5165"
   },
   {
     "enrollment": "CSJMA26000001033",
@@ -814,8 +814,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SR5113"
   },
   {
     "enrollment": "CSJMA26000001030",
@@ -828,8 +828,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SR1136"
   },
   {
     "enrollment": "26REG26060652",
@@ -842,8 +842,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PY4426"
   },
   {
     "enrollment": "CSJMA26000004864",
@@ -856,8 +856,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-JY1136"
   },
   {
     "enrollment": "CSJMA26000001074",
@@ -870,8 +870,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AS2236"
   },
   {
     "enrollment": "CSJMA26000004868",
@@ -884,8 +884,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AD2218"
   },
   {
     "enrollment": "CSJMA26000001032",
@@ -898,8 +898,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-DS1796"
   },
   {
     "enrollment": "CSJMA25250088920",
@@ -913,7 +913,7 @@
     "payment": "confirmed",
     "status": "confirmed",
     "passReleased": false,
-    "passId": ""
+    "passId": "GEN26-KK1189"
   },
   {
     "enrollment": "CSJMA25250071977",
@@ -926,8 +926,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PC2569"
   },
   {
     "enrollment": "CSJMA25250090032",
@@ -940,8 +940,8 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-AK9536"
   },
   {
     "enrollment": "CSJMA25250153304",
@@ -954,8 +954,22 @@
     "inCharge": "Kshama Yadav",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SY4935"
+  },
+  {
+    "enrollment": "CSJMA26000004885",
+    "name": "Shrashti Yadav",
+    "course": "M.Sc Physics",
+    "year": "1st Year",
+    "formNo": "84",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Aryan Raj",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SY2216"
   },
   {
     "enrollment": "CSJMU262721190",
@@ -968,8 +982,8 @@
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PS1133"
   },
   {
     "enrollment": "CSJMA26000003732",
@@ -982,8 +996,8 @@
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-NY1036"
   },
   {
     "enrollment": "CSJMA25000006143",
@@ -996,8 +1010,8 @@
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-HG3407"
   },
   {
     "enrollment": "CSJMA25000006138",
@@ -1010,8 +1024,8 @@
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-MY2407"
   },
   {
     "enrollment": "CSJMA25000006150",
@@ -1024,8 +1038,8 @@
     "inCharge": "Vipin Kumar",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-PD5548"
   },
   {
     "enrollment": "CSJMA26000007047",
@@ -1035,10 +1049,10 @@
     "formNo": "61",
     "mode": "Online",
     "amount": 400,
-    "inCharge": "Vipin Kumar",
+    "inCharge": "Shubham",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
-    "passId": ""
+    "passReleased": true,
+    "passId": "GEN26-SM9945"
   }
 ]

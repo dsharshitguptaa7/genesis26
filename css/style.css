@@ -176,16 +176,130 @@ button:hover {
 .result-box {
   margin-top: 24px;
   padding: 16px 18px;
-  border-radius: 14px;
-  background: rgba(248, 243, 234, 0.7);
+  border-radius: 16px;
+  background: rgba(248, 243, 234, 0.85);
   border: 1px solid var(--border);
   min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.status-card {
+  width: 100%;
+  padding: 8px 4px;
+  text-align: center;
+  animation: fadeIn 0.35s ease-out;
+}
+
+.status-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.status-card.confirmed h3 {
+  color: var(--success);
+}
+
+.status-card.pending h3 {
+  color: #B26A00;
+}
+
+.status-card.error h3 {
+  color: var(--error);
+}
+
+.status-card .student-greeting {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.status-card p {
+  color: #5F4D43;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.status-card .pass-ready-badge {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(248, 243, 234, 0.9));
+  border: 1px dashed var(--gold);
+  border-radius: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.status-card .pass-notice {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px dashed var(--gold);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.status-card .pass-notice h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.status-card .pass-notice p {
+  font-size: 0.9rem;
+  color: #6F5A4B;
+  margin: 0;
+}
+
+.status-card .btn-view-pass {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #FFFDF8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(109, 31, 42, 0.25);
+  transition: all 0.3s ease;
+}
+
+.status-card .btn-view-pass:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(109, 31, 42, 0.35);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .success {
@@ -198,18 +312,18 @@ button:hover {
   font-weight: 700;
 }
 
-.pending{
-    color:#D68910;
-    font-weight:bold;
+.pending {
+  color: #D68910;
+  font-weight: bold;
 }
 
-.admin-link{
-    font-size:15px;
-    color:#4F1721;
-    text-decoration:rgba(109, 31, 42, 0.12);
-    opacity:.9;
+.admin-link {
+  font-size: 15px;
+  color: #4F1721;
+  text-decoration: rgba(109, 31, 42, 0.12);
+  opacity: .9;
 }
 
-.admin-link:hover{
-    opacity:1;
+.admin-link:hover {
+  opacity: 1;
 }
