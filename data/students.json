@@ -1364,6 +1364,20 @@
     "passId": "GEN26-SS0117"
   },
   {
+    "enrollment": "CSJMA26000003730",
+    "name": "Agrim Singh",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "112",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AS0120"
+  },
+  {
     "enrollment": "CSJMA25000006143",
     "name": "Harshit Gupta",
     "course": "M.Sc Mathematics (AI & DS)",
