@@ -1042,6 +1042,20 @@
     "passId": "GEN26-NY1036"
   },
   {
+    "enrollment": "CSJMA26000003734",
+    "name": "Anshika Pandey",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "87",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AP1966"
+  },
+  {
     "enrollment": "CSJMA25000006143",
     "name": "Harshit Gupta",
     "course": "M.Sc Mathematics (AI & DS)",
@@ -1082,6 +1096,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-PD5548"
+  },
+  {
+    "enrollment": "CSJMA25000006152",
+    "name": "Rishabh Tiwari",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "2nd Year",
+    "formNo": "89",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-RT5998"
   },
   {
     "enrollment": "CSJMA26000007047",
