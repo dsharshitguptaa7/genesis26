@@ -237,6 +237,20 @@
     "passId": "GEN26-HT9596"
   },
   {
+    "enrollment": "CSJMA24000003428",
+    "name": "Himashu Mall",
+    "course": "B.Sc Physics (Hons)",
+    "year": "3rd Year",
+    "formNo": "111",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Shivanshu",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-HM9007"
+  },
+  {
     "enrollment": "CSJMA26000004923",
     "name": "Raunak Dwivedi",
     "course": "B.Sc Chemistry (Hons)",
@@ -1334,6 +1348,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AS0111"
+  },
+  {
+    "enrollment": "CSJMU262739034",
+    "name": "Siddharth Singh",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "91",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SS0117"
   },
   {
     "enrollment": "CSJMA25000006143",
