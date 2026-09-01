@@ -860,6 +860,19 @@
     "passId": "GEN26-AS2415"
   },
   {
+    "enrollment": "CSJMA24000002429",
+    "name": "Shreya Omer",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "3rd Year",
+    "formNo": "119",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SO2429"
+  },
+  {
     "enrollment": "CSJMA26000006138",
     "name": "Deepshikha Gautam",
     "course": "M.Sc Quantum Technology",
@@ -1110,6 +1123,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SK2036"
+  },
+  {
+    "enrollment": "CSJMA26000006862",
+    "name": "Adersh Raj",
+    "course": "M.Sc Physics",
+    "year": "1st Year",
+    "formNo": "118",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Aryan Raj",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AR2113"
   },
    {
     "enrollment": "CSJMA25250153309",

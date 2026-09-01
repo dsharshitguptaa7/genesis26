@@ -5,5 +5,26 @@
     "paidTo": "Ansh Sharma",
     "amount": 150,
     "mode": "Cash"
+  },
+  {
+    "date": "2026-09-01",
+    "purpose": "Refreshment + Packaging Material (for 150 Persons)",
+    "paidTo": "Manali Yadav",
+    "amount": 6650,
+    "mode": "Cash"
+  },
+  {
+    "date": "2026-09-01",
+    "purpose": "Gift (Dairy+Pen+Keychain) + Packaging Material (for 110 Persons)",
+    "paidTo": "Manali Yadav",
+    "amount": 6850,
+    "mode": "Online"  
+  },
+  {
+    "date": "2026-09-01",
+    "purpose": "Convence (Refreshment + Gifts + Packaging Material)",
+    "paidTo": "Manali Yadav",
+    "amount": 500,
+    "mode": "Cash"
   }
 ]
