@@ -781,6 +781,20 @@
     "passId": "GEN26-SR5533"
   },
   {
+    "enrollment": "CSJMA26000004920",
+    "name": "Aditya Sahu",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "114",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AS5524"
+  },
+  {
     "enrollment": "CSJMA25250153316",
     "name": "Sakshi Mishra",
     "course": "B.Sc Mathematics (Hons)",
@@ -1376,6 +1390,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AS0120"
+  },
+  {
+    "enrollment": "CSJMA26000003729",
+    "name": "Adarsh Mishra",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "113",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AM0121"
   },
   {
     "enrollment": "CSJMA25000006143",
