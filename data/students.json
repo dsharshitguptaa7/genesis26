@@ -795,6 +795,20 @@
     "passId": "GEN26-AS5524"
   },
   {
+    "enrollment": "CSJMA26000007291",
+    "name": "Sanjana Vishwakarma",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "116",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SV5334"
+  },
+  {
     "enrollment": "CSJMA25250153316",
     "name": "Sakshi Mishra",
     "course": "B.Sc Mathematics (Hons)",
@@ -834,6 +848,19 @@
     "passId": "GEN26-ID5235"
   },
   {
+    "enrollment": "CSJMA25250072168",
+    "name": "Rishu Dixit",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "2nd Year",
+    "formNo": "125",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-RD5139"
+  },
+  {
     "enrollment": "CSJMA24000002419",
     "name": "Mandavi Tiwari",
     "course": "B.Sc Mathematics (Hons)",
@@ -871,6 +898,19 @@
     "payment": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SO2429"
+  },
+  {
+    "enrollment": "CSJMA24000002421",
+    "name": "Nibha Yadav",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "3rd Year",
+    "formNo": "126",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-NY2513"
   },
   {
     "enrollment": "CSJMA26000006138",
@@ -1137,6 +1177,48 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AR2113"
+  },
+  {
+    "enrollment": "CSJMA26000005606",
+    "name": "Tanu Agrahari",
+    "course": "M.Sc Physics",
+    "year": "1st Year",
+    "formNo": "120",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Aryan Raj",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-TA2765"
+  },
+  {
+    "enrollment": "CSJMA26000001536",
+    "name": "Manshi",
+    "course": "M.Sc Physics",
+    "year": "1st Year",
+    "formNo": "121",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Aryan Raj",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-MK2136"
+  },
+  {
+    "enrollment": "CSJMA26000001534",
+    "name": "Ruchita Pal",
+    "course": "M.Sc Physics",
+    "year": "1st Year",
+    "formNo": "122",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Aryan Raj",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-RP0036"
   },
    {
     "enrollment": "CSJMA25250153309",
@@ -1487,6 +1569,34 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-RT5998"
+  },
+  {
+    "enrollment": "CSJMA25000035668",
+    "name": "Anshika Shukla",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "2nd Year",
+    "formNo": "123",
+    "mode": "Cash",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AS2123"
+  },
+  {
+    "enrollment": "CSJMA25000006137",
+    "name": "Alok Singh",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "2nd Year",
+    "formNo": "129",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AS2144"
   },
   {
     "enrollment": "CSJMA26000007047",
