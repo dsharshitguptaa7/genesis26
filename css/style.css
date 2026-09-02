@@ -28,7 +28,7 @@ body {
   background: linear-gradient(135deg, rgba(248, 243, 234, 0.95), rgba(255, 253, 248, 0.95));
   color: var(--text);
   overflow-x: hidden;
-  padding: 24px 24px 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +41,67 @@ body::before {
   pointer-events: none;
 }
 
+/* =========================================================
+   TOP ANNOUNCEMENT BAR
+========================================================= */
+
+.top-announcement-bar {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #FFFDF8;
+  padding: 10px 18px;
+  box-shadow: 0 4px 16px rgba(109, 31, 42, 0.18);
+  border-bottom: 1.5px solid var(--gold);
+  position: relative;
+  z-index: 10;
+}
+
+.announcement-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.announcement-tag {
+  background: var(--gold);
+  color: var(--primary-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.announcement-text {
+  margin: 0;
+  color: #FFFDF8;
+}
+
+.announcement-text strong {
+  color: #FFE885;
+}
+
+.announcement-text .highlight-date {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 232, 133, 0.3);
+}
+
 .page-shell {
   min-height: auto;
   display: grid;
@@ -49,7 +110,7 @@ body::before {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0 30px;
+  padding: 30px 24px 30px;
   flex: 1;
   width: 100%;
 }
@@ -111,21 +172,94 @@ body::before {
   font-size: 0.95rem;
 }
 
-.note-box {
-  margin: 0 0 20px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.12), rgba(248, 243, 234, 0.85));
-  border: 1px solid rgba(201, 162, 39, 0.28);
-  text-align: center;
+/* =========================================================
+   REGISTRATION NOTICE CARD
+========================================================= */
+
+.notice-card {
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(109, 31, 42, 0.05), rgba(201, 162, 39, 0.12));
+  border: 1.5px solid rgba(201, 162, 39, 0.4);
+  box-shadow: 0 6px 20px rgba(61, 43, 31, 0.05);
+  text-align: left;
 }
 
-.note-box p {
-  margin: 0;
-  color: #7a5428;
+.notice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary);
+  color: #FFFDF8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.notice-badge .notice-icon {
+  font-size: 12px;
+}
+
+.notice-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.notice-sub {
+  color: #5F4D43;
   font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1.6;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.notice-info-box {
+  background: rgba(255, 253, 248, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.info-icon {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.info-row p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.info-row p strong {
+  color: var(--primary);
+}
+
+.info-row p .date-highlight {
+  color: #8B2635;
+  font-weight: 700;
+  background: rgba(201, 162, 39, 0.18);
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .inputBox {
@@ -390,7 +524,41 @@ button:hover {
 
 @media (max-width: 600px) {
   body {
-    padding: 16px 16px 0;
+    padding: 0;
+  }
+
+  .top-announcement-bar {
+    padding: 8px 12px;
+  }
+
+  .announcement-inner {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .announcement-tag {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  .page-shell {
+    padding: 16px 16px 24px;
+  }
+
+  .notice-card {
+    padding: 14px 12px;
+  }
+
+  .notice-heading {
+    font-size: 1.05rem;
+  }
+
+  .info-row {
+    gap: 8px;
+  }
+
+  .info-row p {
+    font-size: 0.82rem;
   }
 
   .site-footer {

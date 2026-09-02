@@ -132,9 +132,9 @@ function generateQR(passId) {
     try {
         new QRCode(qrContainer, {
             text: String(passId).trim(),
-            width: 165,
-            height: 165,
-            colorDark: "#3D2B1F",
+            width: 150,
+            height: 150,
+            colorDark: "#1F140E",
             colorLight: "#FFFFFF",
             correctLevel: QRCode.CorrectLevel.H
         });
