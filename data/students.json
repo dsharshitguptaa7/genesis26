@@ -1,47 +1,5 @@
 [
   {
-    "enrollment": "240501003",
-    "name": "Priya Sharma",
-    "course": "B.Sc Chemistry (Hons)",
-    "year": "1st Year",
-    "formNo": "103",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Sanyogita Omar",
-    "payment": "pending",
-    "status": "pending",
-    "passReleased": false,
-    "passId": ""
-  },
-  {
-    "enrollment": "240501002",
-    "name": "Rahul Singh",
-    "course": "B.Sc Physics (Hons)",
-    "year": "1st Year",
-    "formNo": "102",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Shivanshu",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": true,
-    "passId": "GEN26-A8M2QW"
-  },
-  {
-    "enrollment": "240501001",
-    "name": "Harshit Gupta",
-    "course": "M.Sc Mathematics (AI & DS)",
-    "year": "2nd Year",
-    "formNo": "101",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Vipin Kumar",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": false,
-    "passId": "GEN26-X7K4P9"
-  },
-  {
     "enrollment": "CSJMA26000004543",
     "name": "Anirudh Tripathi",
     "course": "B.Sc Physics (Hons)",
@@ -1123,6 +1081,20 @@
     "passId": "GEN26-DS1796"
   },
   {
+    "enrollment": "CCSJMA26000006755",
+    "name": "Aditya Chaurasiya",
+    "course": "M.Sc Chemistry",
+    "year": "1st Year",
+    "formNo": "117",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AC1799"
+  },
+  {
     "enrollment": "CSJMA25250088920",
     "name": "Kalpana",
     "course": "M.Sc Chemistry",
@@ -1177,6 +1149,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SY4935"
+  },
+  {
+    "enrollment": "CSJMU25250088919",
+    "name": "Palak Mishra",
+    "course": "M.Sc Chemistry",
+    "year": "2nd Year",
+    "formNo": "128",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-PM4413"
   },
   {
     "enrollment": "CSJMA26000004885",
@@ -1555,6 +1541,20 @@
     "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AM0121"
+  },
+  {
+    "enrollment": "CSJMA26000003737",
+    "name": "Anshuman Tiwari",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "127",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AT0127"
   },
   {
     "enrollment": "CSJMA25000006143",
