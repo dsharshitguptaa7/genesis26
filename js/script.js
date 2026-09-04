@@ -1,7 +1,10 @@
 /* =========================================================
    GENESIS'26 — STUDENT PORTAL SCRIPT
    Payment Confirmation & Pass Release Gateway
+   Firestore-First with JSON Fallback Architecture
 ========================================================= */
+
+import { db, doc, getDoc } from "./firebase-config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("checkForm");
@@ -32,29 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         try {
-            const response = await fetch("./data/students.json");
+            let student = null;
 
-            if (!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+            // 1. Primary Source: Cloud Firestore Lookup
+            try {
+                if (db) {
+                    const docRef = doc(db, "students", enrollment);
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                        if (isCourseMatch(data.course, course)) {
+                            student = data;
+                        }
+                    }
+                }
+            } catch (firestoreErr) {
+                // Unauthenticated visitor or offline network
+                console.warn("Firestore lookup restricted or offline, using backup dataset:", firestoreErr);
             }
 
-            const students = await response.json();
+            // 2. Backup / Reference Dataset: students.json
+            if (!student) {
+                const response = await fetch("./data/students.json");
+                if (response.ok) {
+                    const students = await response.json();
+                    student = students.find(s => {
+                        const sEnroll = String(s.enrollment || "").trim().toLowerCase();
+                        const qEnroll = enrollment.toLowerCase();
+                        return sEnroll === qEnroll && isCourseMatch(s.course, course);
+                    });
+                }
+            }
 
-            const student = students.find(s => {
-                const sEnroll = String(s.enrollment || "").trim().toLowerCase();
-                const qEnroll = enrollment.toLowerCase();
-                const sCourse = String(s.course || "").trim().toLowerCase();
-                const qCourse = course.toLowerCase();
-
-                const enrollMatch = sEnroll === qEnroll;
-                const courseMatch = sCourse === qCourse ||
-                    (qCourse.includes("environmental") && sCourse.includes("environment")) ||
-                    (qCourse.includes("environment") && sCourse.includes("environmental")) ||
-                    (sCourse.replace(/\s*\(hons\)/i, "") === qCourse.replace(/\s*\(hons\)/i, ""));
-
-                return enrollMatch && courseMatch;
-            });
-
+            // 3. Handle States
             if (!student) {
                 result.innerHTML = `
                     <div class="status-card error">
@@ -129,6 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+function isCourseMatch(studentCourse, queryCourse) {
+    const sCourse = String(studentCourse || "").trim().toLowerCase();
+    const qCourse = String(queryCourse || "").trim().toLowerCase();
+
+    return sCourse === qCourse ||
+        (qCourse.includes("environmental") && sCourse.includes("environment")) ||
+        (qCourse.includes("environment") && sCourse.includes("environmental")) ||
+        (sCourse.replace(/\s*\(hons\)/i, "") === qCourse.replace(/\s*\(hons\)/i, ""));
+}
+
 function escapeHtml(str) {
     if (!str) return "";
     return String(str)
@@ -139,7 +162,7 @@ function escapeHtml(str) {
         .replace(/'/g, "&#039;");
 }
 
-function openPass(enrollment, course) {
+export function openPass(enrollment, course) {
     const encEnrollment = encodeURIComponent(enrollment);
     const encCourse = encodeURIComponent(course);
     window.location.href = `pass.html?enrollment=${encEnrollment}&course=${encCourse}`;

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis'26 | QR Entry Verification</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- QR Scanner Library (html5-qrcode) -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+    <!-- Scanner Stylesheet -->
+    <link rel="stylesheet" href="css/verify.css">
+</head>
+
+<body>
+
+    <main class="scanner-page">
+
+        <!-- =========================================================
+             SECTION 1: SCANNER AUTHENTICATION (LOGIN)
+        ========================================================= -->
+        <div class="auth-card" id="authCard">
+            <div class="auth-header">
+                <div class="auth-logo-badge">
+                    <img src="assets/logo.png" alt="Genesis'26 Logo" class="auth-logo-img">
+                </div>
+                <p class="auth-eyebrow">OFFICIAL ENTRY VERIFICATION</p>
+                <h1 class="auth-title">GENESIS'26</h1>
+                <p class="auth-subtitle">Scanner Gate Login</p>
+            </div>
+
+            <div class="auth-body">
+                <div id="authAlert" class="auth-alert" style="display: none;" role="alert"></div>
+
+                <form id="scannerLoginForm" novalidate>
+                    <div class="input-group">
+                        <label for="scannerEmail">Scanner Email</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="scannerEmail" placeholder="scanner1@genesis26.in" required autocomplete="username">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="scannerPassword">Password</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="scannerPassword" placeholder="Enter scanner password" required autocomplete="current-password">
+                            <button type="button" id="togglePasswordBtn" class="toggle-pwd-btn" aria-label="Toggle password visibility">👁️</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="loginBtn" class="btn-primary-login">
+                        <span class="btn-text">Sign In to Scanner</span>
+                        <span class="btn-spinner" style="display: none;"></span>
+                    </button>
+                </form>
+
+                <div class="auth-hint">
+                    <p>🔒 Restricted to authorized Genesis'26 entry coordinators.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================
+             SECTION 2: SCANNER DASHBOARD (AFTER LOGIN)
+        ========================================================= -->
+        <div class="dashboard-card" id="dashboardCard" style="display: none;">
+
+            <!-- Dashboard Top Bar -->
+            <header class="dash-top-bar">
+                <div class="dash-user-info">
+                    <span class="user-pill">
+                        <span class="user-icon">👤</span>
+                        <span id="activeUserEmail">scanner1@genesis26.in</span>
+                    </span>
+                    <span class="counter-pill">
+                        <span class="counter-icon">🎟️</span>
+                        <span id="scannedCountBadge">0 Verified</span>
+                    </span>
+                </div>
+                <button type="button" id="logoutBtn" class="btn-logout" title="Sign out of scanner">
+                    <span>Logout</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <!-- Dashboard Branding -->
+            <div class="dash-branding">
+                <p class="dash-eyebrow">SBS MINI AUDITORIUM • 08 SEP 2026</p>
+                <h2 class="dash-title">Entry Verification Terminal</h2>
+            </div>
+
+            <!-- Mode Selector Tabs -->
+            <div class="mode-tabs" role="tablist">
+                <button type="button" id="tabCamera" class="mode-tab active" role="tab" aria-selected="true">
+                    📷 Camera Scanner
+                </button>
+                <button type="button" id="tabManual" class="mode-tab" role="tab" aria-selected="false">
+                    ⌨️ Manual Pass ID
+                </button>
+            </div>
+
+            <!-- Panel A: Camera Scanner View -->
+            <div id="cameraPanel" class="tab-panel active">
+                <div class="camera-viewport-card">
+                    <div id="reader" class="scanner-viewfinder"></div>
+                    <div id="scannerOverlay" class="scanner-reticle" aria-hidden="true">
+                        <div class="reticle-corner tl"></div>
+                        <div class="reticle-corner tr"></div>
+                        <div class="reticle-corner bl"></div>
+                        <div class="reticle-corner br"></div>
+                        <div class="scanning-laser"></div>
+                    </div>
+                </div>
+
+                <div id="cameraErrorBox" class="camera-alert" style="display: none;"></div>
+
+                <div class="camera-actions">
+                    <button type="button" id="toggleCameraBtn" class="btn-camera-toggle">
+                        <span id="cameraBtnIcon">⏸️</span>
+                        <span id="cameraBtnText">Pause Scanner</span>
+                    </button>
+                    <button type="button" id="switchCameraBtn" class="btn-camera-switch" title="Switch between front and back camera">
+                        🔄 Switch Camera
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panel B: Manual Pass ID View -->
+            <div id="manualPanel" class="tab-panel" style="display: none;">
+                <div class="manual-input-box">
+                    <label for="manualPassIdInput">Enter Pass ID</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🎫</span>
+                        <input type="text" id="manualPassIdInput" placeholder="e.g. GEN26-HG3407" autocomplete="off" autocapitalize="characters">
+                    </div>
+                    <button type="button" id="manualVerifyBtn" class="btn-primary-verify">
+                        Verify Pass ID
+                    </button>
+                </div>
+            </div>
+
+            <!-- =====================================================
+                 VERIFICATION RESULT MODAL / CARD
+            ===================================================== -->
+            <div id="resultModal" class="result-modal" style="display: none;" role="dialog" aria-live="assertive">
+                <div class="result-card" id="resultCard">
+                    <!-- Dynamic Result Injected Here -->
+                </div>
+            </div>
+
+            <!-- Recent Scans History Accordion -->
+            <section class="recent-scans-box">
+                <div class="recent-header" id="recentHeader">
+                    <h3>Recent Terminal Scans (<span id="sessionLogCount">0</span>)</h3>
+                    <span class="accordion-arrow">▾</span>
+                </div>
+                <div id="recentScansList" class="recent-list">
+                    <p class="empty-list-note">No passes scanned yet in this terminal session.</p>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Developer Footer Credit -->
+    <footer class="site-footer">
+        <p>
+            Designed and Developed by
+            <strong>Harshit Gupta</strong>
+            <span>(M.Sc Mathematics with AI &amp; DS)</span>
+        </p>
+    </footer>
+
+    <!-- Verification Logic Module -->
+    <script type="module" src="js/verify.js"></script>
+
+</body>
+
+</html>

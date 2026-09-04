@@ -1,7 +1,9 @@
 /* =========================================================
    GENESIS'26 — DIGITAL ENTRY PASS CONTROLLER
-   Verification, Dynamic QR Generation, and Print Handler
+   Firestore-First with Backup Fallback, Validation, and QR Generator
 ========================================================= */
+
+import { db, doc, getDoc } from "./firebase-config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     loadPass();
@@ -25,30 +27,38 @@ async function loadPass() {
     const course = rawCourse.trim();
 
     try {
-        // 2. Fetch Student Database
-        const response = await fetch("./data/students.json");
+        let student = null;
 
-        if (!response.ok) {
-            throw new Error(`Database error: HTTP ${response.status}`);
+        // 2. Primary Source: Cloud Firestore Lookup
+        try {
+            if (db) {
+                const docRef = doc(db, "students", enrollment);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if (isCourseMatch(data.course, course)) {
+                        student = data;
+                    }
+                }
+            }
+        } catch (firestoreErr) {
+            console.warn("Firestore pass lookup restricted or offline, using backup dataset:", firestoreErr);
         }
 
-        const students = await response.json();
+        // 3. Backup / Reference Dataset: students.json
+        if (!student) {
+            const response = await fetch("./data/students.json");
+            if (!response.ok) {
+                throw new Error(`Database error: HTTP ${response.status}`);
+            }
+            const students = await response.json();
 
-        // 3. Find Matching Student Record
-        const student = students.find(s => {
-            const sEnroll = String(s.enrollment || "").trim().toLowerCase();
-            const qEnroll = enrollment.toLowerCase();
-            const sCourse = String(s.course || "").trim().toLowerCase();
-            const qCourse = course.toLowerCase();
-
-            const enrollMatch = sEnroll === qEnroll;
-            const courseMatch = sCourse === qCourse ||
-                (qCourse.includes("environmental") && sCourse.includes("environment")) ||
-                (qCourse.includes("environment") && sCourse.includes("environmental")) ||
-                (sCourse.replace(/\s*\(hons\)/i, "") === qCourse.replace(/\s*\(hons\)/i, ""));
-
-            return enrollMatch && courseMatch;
-        });
+            student = students.find(s => {
+                const sEnroll = String(s.enrollment || "").trim().toLowerCase();
+                const qEnroll = enrollment.toLowerCase();
+                return sEnroll === qEnroll && isCourseMatch(s.course, course);
+            });
+        }
 
         // 4. Verify Record Existence
         if (!student) {
@@ -99,6 +109,16 @@ async function loadPass() {
     }
 }
 
+function isCourseMatch(studentCourse, queryCourse) {
+    const sCourse = String(studentCourse || "").trim().toLowerCase();
+    const qCourse = String(queryCourse || "").trim().toLowerCase();
+
+    return sCourse === qCourse ||
+        (qCourse.includes("environmental") && sCourse.includes("environment")) ||
+        (qCourse.includes("environment") && sCourse.includes("environmental")) ||
+        (sCourse.replace(/\s*\(hons\)/i, "") === qCourse.replace(/\s*\(hons\)/i, ""));
+}
+
 function renderPassData(student) {
     const nameEl = document.getElementById("studentName");
     const enrollEl = document.getElementById("studentEnrollment");
@@ -110,7 +130,7 @@ function renderPassData(student) {
     if (courseEl) courseEl.textContent = student.course;
     if (passIdEl) passIdEl.textContent = student.passId;
 
-    // Generate QR with ONLY student.passId
+    // Generate QR with ONLY student.passId (no sensitive data)
     generateQR(student.passId);
 
     // Setup Download / Print handler

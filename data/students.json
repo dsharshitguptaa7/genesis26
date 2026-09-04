@@ -37,6 +37,7 @@
     "amount": 400,
     "inCharge": "Shivanshu",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-NB1659"
   },
@@ -177,7 +178,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-AP0036"
   },
   {
@@ -191,7 +192,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-VD0136"
   },
   {
@@ -205,7 +206,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-NK1063"
   },
   {
@@ -219,7 +220,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-AS1963"
   },
   {
@@ -233,7 +234,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-SD1783"
   },
   {
@@ -247,7 +248,7 @@
     "inCharge": "Shivanshu",
     "payment": "confirmed",
     "status": "confirmed",
-    "passReleased": false,
+    "passReleased": true,
     "passId": "GEN26-PS4596"
   },
   {
@@ -568,6 +569,7 @@
     "amount": 400,
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SS4951"
   },
@@ -581,6 +583,7 @@
     "amount": 400,
     "inCharge": "Sanyogita Omar",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-CM4954"
   },
@@ -888,6 +891,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SM5316"
   },
@@ -901,6 +905,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AS1350"
   },
@@ -914,6 +919,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-ID5235"
   },
@@ -927,6 +933,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-RD5139"
   },
@@ -940,6 +947,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-MT2419"
   },
@@ -953,6 +961,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-AS2415"
   },
@@ -966,6 +975,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-SO2429"
   },
@@ -979,6 +989,7 @@
     "amount": 400,
     "inCharge": "Ishaan Deep Singh Malhotra",
     "payment": "confirmed",
+    "status": "confirmed",
     "passReleased": true,
     "passId": "GEN26-NY2513"
   },
