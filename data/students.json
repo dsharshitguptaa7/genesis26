@@ -1862,6 +1862,20 @@
     "passId": "GEN26-AT0127"
   },
   {
+    "enrollment": "CSJMA26000007085",
+    "name": "Abhay",
+    "course": "M.Sc Mathematics (AI & DS)",
+    "year": "1st Year",
+    "formNo": "127",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Vipin Kumar",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AK0133"
+  },
+  {
     "enrollment": "CSJMA25000006143",
     "name": "Harshit Gupta",
     "course": "M.Sc Mathematics (AI & DS)",
