@@ -323,6 +323,12 @@ body::before {
     border: 1px solid #2E7D32;
 }
 
+.counter-pill.food-pill {
+    background: rgba(217, 119, 6, 0.25);
+    color: #FDE68A;
+    border: 1px solid #D97706;
+}
+
 .btn-logout {
     display: inline-flex;
     align-items: center;
@@ -363,6 +369,121 @@ body::before {
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #FFFFFF;
+}
+
+/* =========================================================
+   SCAN PURPOSE SELECTOR (ENTRY vs FOOD)
+========================================================= */
+
+.purpose-container {
+    padding: 0 16px 14px;
+}
+
+.purpose-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.purpose-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1.5px solid rgba(212, 175, 55, 0.25);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.purpose-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold-main);
+}
+
+.purpose-btn.active {
+    background: linear-gradient(135deg, rgba(109, 31, 42, 0.95), rgba(74, 14, 23, 0.95));
+    border-color: var(--gold-bright);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.purpose-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.purpose-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.purpose-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.purpose-sub {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 2px;
+}
+
+.purpose-btn.active .purpose-sub {
+    color: var(--gold-bright);
+}
+
+.purpose-check {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold-main);
+    color: #2D080E;
+    font-size: 11px;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+}
+
+.purpose-btn.active .purpose-check {
+    display: flex;
+}
+
+/* Active Purpose Banner on Camera */
+.active-purpose-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--gold-main);
+    color: var(--gold-bright);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Tabs */
@@ -686,6 +807,62 @@ body::before {
     background: #FEE2E2;
     color: #B91C1C;
     border: 1.5px solid #DC2626;
+}
+
+/* State 6: FOOD VALID */
+.result-card.state-food-valid .result-status-banner {
+    background: linear-gradient(135deg, #B45309, #D97706);
+    color: #FFFFFF;
+}
+
+.result-card.state-food-valid .status-badge {
+    background: #FEF3C7;
+    color: #B45309;
+    border: 1.5px solid #D97706;
+}
+
+/* State 7: FOOD ALREADY CLAIMED */
+.result-card.state-food-used .result-status-banner {
+    background: linear-gradient(135deg, #7F1D1D, #B91C1C);
+    color: #FFFFFF;
+}
+
+.result-card.state-food-used .status-badge {
+    background: #FEE2E2;
+    color: #B91C1C;
+    border: 1.5px solid #DC2626;
+}
+
+/* Dual Status Pills (Gate Entry + Food Status) */
+.event-statuses-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.status-mini-pill {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-mini-pill.done {
+    background: rgba(46, 125, 50, 0.1);
+    border: 1px solid rgba(46, 125, 50, 0.3);
+    color: #1B5E20;
+}
+
+.status-mini-pill.pending {
+    background: rgba(217, 119, 6, 0.1);
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    color: #92400E;
 }
 
 .result-status-banner {

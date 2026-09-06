@@ -1,6 +1,7 @@
 /* =========================================================
-   GENESIS'26 — QR ENTRY VERIFIER & SCANNER CONTROLLER
-   Authentication, html5-qrcode Camera, and Atomic Firestore Transactions
+   GENESIS'26 — QR ENTRY & FOOD VERIFIER CONTROLLER
+   Supports Dual Modes: 1) Gate Entry Scan, 2) Food/Meal Scan
+   Atomic Firestore Transactions for Duplicate Prevention & Logs
 ========================================================= */
 
 import {
@@ -19,12 +20,15 @@ import {
     onAuthStateChanged
 } from "./firebase-config.js";
 
-// Global Scanner State
+// Global Scanner & Session State
 let html5QrCode = null;
 let isScannerRunning = false;
 let isProcessingScan = false;
 let currentCameraFacing = "environment"; // Preferred rear camera on mobile
-let sessionScannedCount = 0;
+let currentScanPurpose = "entry"; // "entry" or "food"
+
+let sessionEntryCount = 0;
+let sessionFoodCount = 0;
 let sessionLogs = [];
 
 // DOM Element References
@@ -39,7 +43,12 @@ const loginBtn = document.getElementById("loginBtn");
 
 const activeUserEmail = document.getElementById("activeUserEmail");
 const scannedCountBadge = document.getElementById("scannedCountBadge");
+const foodCountBadge = document.getElementById("foodCountBadge");
 const logoutBtn = document.getElementById("logoutBtn");
+
+const btnPurposeEntry = document.getElementById("btnPurposeEntry");
+const btnPurposeFood = document.getElementById("btnPurposeFood");
+const activePurposeBadge = document.getElementById("activePurposeBadge");
 
 const tabCamera = document.getElementById("tabCamera");
 const tabManual = document.getElementById("tabManual");
@@ -63,31 +72,28 @@ const recentScansList = document.getElementById("recentScansList");
 const sessionLogCount = document.getElementById("sessionLogCount");
 
 /* =========================================================
-   1. AUTHENTICATION & SESSION MANAGEMENT
+   1. INITIALIZATION & AUTHENTICATION
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
     initAuthListeners();
+    initPurposeListeners();
     initTabListeners();
     initManualVerifyListeners();
     initRecentAccordion();
 });
 
 function initAuthListeners() {
-    // Listen for Firebase Auth State Changes
     if (auth) {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // User is authenticated
                 showDashboard(user);
             } else {
-                // User is signed out
                 showLogin();
             }
         });
     }
 
-    // Toggle Password Visibility
     if (togglePasswordBtn && scannerPasswordInput) {
         togglePasswordBtn.addEventListener("click", () => {
             const isPassword = scannerPasswordInput.type === "password";
@@ -96,7 +102,6 @@ function initAuthListeners() {
         });
     }
 
-    // Handle Login Form Submit
     if (scannerLoginForm) {
         scannerLoginForm.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -114,7 +119,6 @@ function initAuthListeners() {
 
             try {
                 await signInWithEmailAndPassword(auth, email, password);
-                // Auth state change listener will show the dashboard
             } catch (error) {
                 console.error("Scanner Login Error:", error);
                 let message = "Invalid email or password. Please try again.";
@@ -132,7 +136,6 @@ function initAuthListeners() {
         });
     }
 
-    // Handle Logout
     if (logoutBtn) {
         logoutBtn.addEventListener("click", async () => {
             await stopCamera();
@@ -159,7 +162,7 @@ function showDashboard(user) {
     if (activeUserEmail) {
         activeUserEmail.textContent = user.email || "scanner1@genesis26.in";
     }
-    // Start camera automatically when dashboard opens
+    updateCountersUI();
     startCamera();
 }
 
@@ -189,7 +192,66 @@ function setLoginLoading(loading) {
 }
 
 /* =========================================================
-   2. TAB SWITCHING (CAMERA vs. MANUAL)
+   2. SCAN PURPOSE SELECTOR (GATE ENTRY vs FOOD SCAN)
+========================================================= */
+
+function initPurposeListeners() {
+    if (btnPurposeEntry) {
+        btnPurposeEntry.addEventListener("click", () => {
+            setScanPurpose("entry");
+        });
+    }
+
+    if (btnPurposeFood) {
+        btnPurposeFood.addEventListener("click", () => {
+            setScanPurpose("food");
+        });
+    }
+}
+
+function setScanPurpose(purpose) {
+    currentScanPurpose = purpose;
+
+    if (purpose === "entry") {
+        if (btnPurposeEntry) {
+            btnPurposeEntry.classList.add("active");
+            btnPurposeEntry.setAttribute("aria-checked", "true");
+        }
+        if (btnPurposeFood) {
+            btnPurposeFood.classList.remove("active");
+            btnPurposeFood.setAttribute("aria-checked", "false");
+        }
+        if (activePurposeBadge) {
+            activePurposeBadge.innerHTML = `
+                <span class="purpose-tag-icon">🎟️</span>
+                <span class="purpose-tag-text">MODE: GATE ENTRY SCAN</span>
+            `;
+        }
+    } else {
+        if (btnPurposeFood) {
+            btnPurposeFood.classList.add("active");
+            btnPurposeFood.setAttribute("aria-checked", "true");
+        }
+        if (btnPurposeEntry) {
+            btnPurposeEntry.classList.remove("active");
+            btnPurposeEntry.setAttribute("aria-checked", "false");
+        }
+        if (activePurposeBadge) {
+            activePurposeBadge.innerHTML = `
+                <span class="purpose-tag-icon">🍽️</span>
+                <span class="purpose-tag-text">MODE: FOOD / MEAL SCAN</span>
+            `;
+        }
+    }
+}
+
+function updateCountersUI() {
+    if (scannedCountBadge) scannedCountBadge.textContent = `${sessionEntryCount} Entries`;
+    if (foodCountBadge) foodCountBadge.textContent = `${sessionFoodCount} Meals`;
+}
+
+/* =========================================================
+   3. TAB SWITCHING (CAMERA vs. MANUAL)
 ========================================================= */
 
 function initTabListeners() {
@@ -244,7 +306,7 @@ function initTabListeners() {
 }
 
 /* =========================================================
-   3. QR SCANNER INTEGRATION (html5-qrcode)
+   4. QR SCANNER INTEGRATION (html5-qrcode)
 ========================================================= */
 
 async function startCamera() {
@@ -327,23 +389,21 @@ function hideCameraError() {
 }
 
 function onScanSuccess(decodedText, decodedResult) {
-    if (isProcessingScan) return; // Prevent repeated triggers
+    if (isProcessingScan) return;
     isProcessingScan = true;
 
-    // Immediately pause/stop camera after detection
     stopCamera();
 
-    // Process the QR result as passId only
     const passId = String(decodedText || "").trim();
     verifyPass(passId);
 }
 
 function onScanFailure(error) {
-    // Normal frame-by-frame scanning noise; no-op
+    // Frame scanning noise; no-op
 }
 
 /* =========================================================
-   4. MANUAL PASS ID VERIFICATION
+   5. MANUAL PASS ID VERIFICATION
 ========================================================= */
 
 function initManualVerifyListeners() {
@@ -366,14 +426,15 @@ function initManualVerifyListeners() {
 }
 
 /* =========================================================
-   5. FIRESTORE PASS VERIFICATION & DUPLICATE PREVENTION
+   6. FIRESTORE PASS VERIFICATION (DUAL SCAN SUPPORT)
 ========================================================= */
 
 /**
  * verifyPass(passId)
- * Core central verification function.
- * Validates existence, payment, release status, and entry status.
- * Executes atomic Firestore transaction to prevent duplicate entry.
+ * Central verification controller supporting:
+ * - currentScanPurpose === "entry"
+ * - currentScanPurpose === "food"
+ * Enforces atomic Firestore duplicate-entry & duplicate-meal prevention.
  */
 async function verifyPass(passId) {
     if (!passId || !String(passId).trim()) {
@@ -382,15 +443,15 @@ async function verifyPass(passId) {
     }
 
     const cleanPassId = String(passId).trim();
+    const mode = currentScanPurpose; // "entry" or "food"
 
-    // Ensure database is initialized
     if (!db) {
         showResultState("invalid", { passId: cleanPassId }, "SYSTEM UNAVAILABLE", "Database connection not initialized. Check internet.");
         return;
     }
 
     try {
-        // 1. Find the student using passId in Firestore
+        // 1. Look up student by passId
         const studentsCol = collection(db, "students");
         const q = query(studentsCol, where("passId", "==", cleanPassId));
         const snapshot = await getDocs(q);
@@ -404,27 +465,34 @@ async function verifyPass(passId) {
         const studentRef = doc(db, "students", studentDoc.id);
         const studentData = studentDoc.data();
 
-        // 2. Verify payment status === "confirmed"
+        // 2. Validate Payment
         const isPaymentConfirmed = String(studentData.payment || studentData.status || "").toLowerCase() === "confirmed";
         if (!isPaymentConfirmed) {
-            showResultState("pending", studentData, "PAYMENT NOT CONFIRMED — ENTRY DENIED", "This student's payment is not verified. Please direct them to the coordinator desk.");
+            showResultState("pending", studentData, "PAYMENT NOT CONFIRMED — DENIED", "This student's payment is not verified. Please direct them to the coordinator desk.");
             return;
         }
 
-        // 3. Verify passReleased === true
+        // 3. Validate Pass Release
         if (!studentData.passReleased) {
-            showResultState("unreleased", studentData, "PASS NOT RELEASED — ENTRY DENIED", "This entry pass has not been officially released yet.");
+            showResultState("unreleased", studentData, "PASS NOT RELEASED — DENIED", "This entry pass has not been officially released yet.");
             return;
         }
 
-        // 4. Pre-check: entryUsed === false
-        if (studentData.entryUsed === true) {
-            showResultState("used", studentData, "PASS ALREADY USED — ENTRY DENIED", "This pass has already been scanned and used for entry.");
-            return;
+        // 4. Mode-specific Pre-checks
+        if (mode === "entry") {
+            if (studentData.entryUsed === true) {
+                showResultState("used", studentData, "PASS ALREADY USED — ENTRY DENIED", "This pass has already been scanned and used for gate entry.");
+                return;
+            }
+        } else if (mode === "food") {
+            if (studentData.foodUsed === true) {
+                showResultState("food_used", studentData, "MEAL ALREADY CLAIMED — DENIED", "This student has already collected their food / refreshment meal.");
+                return;
+            }
         }
 
-        // 5. ATOMIC FIRESTORE TRANSACTION FOR DUPLICATE PREVENTION & ENTRY LOG
-        let committedEntryTime = new Date();
+        // 5. Atomic Transaction (Duplicate Prevention & Audit Log)
+        let committedTimestamp = new Date();
 
         await runTransaction(db, async (transaction) => {
             const freshDoc = await transaction.get(studentRef);
@@ -434,25 +502,37 @@ async function verifyPass(passId) {
 
             const freshData = freshDoc.data();
 
-            // Guard: check if another scanner marked it used in the meantime
-            if (freshData.entryUsed === true) {
-                const err = new Error("ALREADY_USED");
-                err.previousTime = freshData.entryTime;
-                throw err;
+            if (mode === "entry") {
+                if (freshData.entryUsed === true) {
+                    const err = new Error("ALREADY_USED");
+                    err.previousTime = freshData.entryTime;
+                    throw err;
+                }
+
+                transaction.update(studentRef, {
+                    entryUsed: true,
+                    entryTime: serverTimestamp()
+                });
+            } else {
+                // mode === "food"
+                if (freshData.foodUsed === true) {
+                    const err = new Error("FOOD_ALREADY_USED");
+                    err.previousTime = freshData.foodTime;
+                    throw err;
+                }
+
+                transaction.update(studentRef, {
+                    foodUsed: true,
+                    foodTime: serverTimestamp()
+                });
             }
 
-            // Atomic update on student document:
-            // Notice: existing Firestore security rules require affectedKeys().hasOnly(['entryUsed', 'entryTime'])
-            transaction.update(studentRef, {
-                entryUsed: true,
-                entryTime: serverTimestamp()
-            });
-
-            // Atomic creation of entry log:
+            // Write unified scan log to entryLogs
             const logsCol = collection(db, "entryLogs");
             const newLogRef = doc(logsCol);
             transaction.set(newLogRef, {
                 passId: cleanPassId,
+                scanType: mode, // "entry" or "food"
                 studentName: studentData.name || "Unknown",
                 enrollment: studentData.enrollment || studentDoc.id,
                 course: studentData.course || "",
@@ -462,34 +542,45 @@ async function verifyPass(passId) {
             });
         });
 
-        // 6. If transaction committed successfully -> ENTRY ALLOWED
-        showResultState("valid", studentData, "ENTRY VERIFIED — ENTRY ALLOWED", "Pass verified successfully. Student is cleared for event entry.", committedEntryTime);
+        // 6. Success State Handling
+        if (mode === "entry") {
+            studentData.entryUsed = true;
+            studentData.entryTime = committedTimestamp;
+            sessionEntryCount++;
+            showResultState("valid", studentData, "ENTRY VERIFIED — ENTRY ALLOWED", "Pass verified successfully. Student is cleared for event entry.", committedTimestamp);
+        } else {
+            studentData.foodUsed = true;
+            studentData.foodTime = committedTimestamp;
+            sessionFoodCount++;
+            showResultState("food_valid", studentData, "MEAL VERIFIED — MEAL ALLOWED", "Meal coupon redeemed successfully. Provide refreshment packet.", committedTimestamp);
+        }
 
-        // Update session counters
-        sessionScannedCount++;
-        if (scannedCountBadge) scannedCountBadge.textContent = `${sessionScannedCount} Verified`;
-        addSessionLog(studentData, committedEntryTime);
+        updateCountersUI();
+        addSessionLog(studentData, committedTimestamp, mode);
 
     } catch (err) {
         if (err.message === "ALREADY_USED") {
             const usedData = { ...studentData, entryTime: err.previousTime || studentData.entryTime };
-            showResultState("used", usedData, "PASS ALREADY USED — ENTRY DENIED", "This pass was already scanned. Duplicate entry is strictly prohibited.");
+            showResultState("used", usedData, "PASS ALREADY USED — ENTRY DENIED", "This pass was already scanned for gate entry. Duplicate entry is strictly prohibited.");
+        } else if (err.message === "FOOD_ALREADY_USED") {
+            const usedData = { ...studentData, foodTime: err.previousTime || studentData.foodTime };
+            showResultState("food_used", usedData, "MEAL ALREADY CLAIMED — DENIED", "This pass was already scanned for meals. Duplicate food claim is prohibited.");
         } else {
             console.error("Firestore Transaction Error:", err);
             let userMsg = "Verification error. Please try scanning again.";
             if (err.code === "permission-denied") {
-                userMsg = "Permission denied. Please ensure you are logged in as an authorized scanner.";
+                userMsg = "Terminal access denied. Please ensure you are logged in as an authorized scanner.";
             }
-            showResultState("invalid", { passId: cleanPassId }, "VERIFICATION ERROR", userMsg);
+            showResultState("invalid", { passId: cleanPassId }, "VERIFICATION FAILED", userMsg);
         }
     }
 }
 
 /* =========================================================
-   6. VERIFICATION RESULT MODAL RENDERING
+   7. VERIFICATION RESULT MODAL RENDERING
 ========================================================= */
 
-function showResultState(state, data, title, message, entryTimeDate) {
+function showResultState(state, data, title, message, actionTimestamp) {
     if (!resultModal || !resultCard) return;
 
     let icon = "❌";
@@ -500,14 +591,22 @@ function showResultState(state, data, title, message, entryTimeDate) {
         icon = "✓";
         stateClass = "state-valid";
         statusSubtitle = "ENTRY ALLOWED";
+    } else if (state === "food_valid") {
+        icon = "🍽️";
+        stateClass = "state-food-valid";
+        statusSubtitle = "MEAL ALLOWED";
     } else if (state === "used") {
         icon = "⚠️";
         stateClass = "state-used";
         statusSubtitle = "ENTRY DENIED";
+    } else if (state === "food_used") {
+        icon = "⚠️";
+        stateClass = "state-food-used";
+        statusSubtitle = "MEAL DENIED";
     } else if (state === "pending" || state === "unreleased") {
         icon = "⏳";
         stateClass = (state === "pending") ? "state-pending" : "state-unreleased";
-        statusSubtitle = "ENTRY DENIED";
+        statusSubtitle = "DENIED";
     } else if (state === "missing") {
         icon = "❓";
         stateClass = "state-invalid";
@@ -519,20 +618,49 @@ function showResultState(state, data, title, message, entryTimeDate) {
     const course = data && data.course ? escapeHtml(data.course) : null;
     const passId = data && data.passId ? escapeHtml(data.passId) : "";
 
-    // Determine timestamp display
+    // Dual Status Pills (Gate Entry + Food Status)
+    let statusPillsHtml = "";
+    if (data && (data.entryUsed !== undefined || data.foodUsed !== undefined)) {
+        const isEntryDone = Boolean(data.entryUsed);
+        const isFoodDone = Boolean(data.foodUsed);
+
+        const entryTimeText = isEntryDone ? formatTimestamp(data.entryTime || actionTimestamp) : "Pending";
+        const foodTimeText = isFoodDone ? formatTimestamp(data.foodTime || actionTimestamp) : "Unclaimed";
+
+        statusPillsHtml = `
+            <div class="event-statuses-row">
+                <div class="status-mini-pill ${isEntryDone ? 'done' : 'pending'}">
+                    <span>🎟️ Entry: <strong>${isEntryDone ? '✓ ' + entryTimeText : '⏳ Pending'}</strong></span>
+                </div>
+                <div class="status-mini-pill ${isFoodDone ? 'done' : 'pending'}">
+                    <span>🍽️ Meal: <strong>${isFoodDone ? '✓ ' + foodTimeText : '🍽️ Unclaimed'}</strong></span>
+                </div>
+            </div>
+        `;
+    }
+
+    // Timestamp Box
     let timestampHtml = "";
-    if (state === "valid") {
-        const timeStr = formatTimestamp(entryTimeDate || new Date());
+    if (state === "valid" || state === "food_valid") {
+        const actionLabel = (state === "food_valid") ? "Meal claimed at" : "Entry verified at";
+        const timeStr = formatTimestamp(actionTimestamp || new Date());
         timestampHtml = `
             <div class="timestamp-box">
-                <span>⏱️ Verified at: <strong>${timeStr}</strong></span>
+                <span>⏱️ ${actionLabel}: <strong>${timeStr}</strong></span>
             </div>
         `;
     } else if (state === "used") {
         const prevTimeStr = formatTimestamp(data && data.entryTime ? data.entryTime : null);
         timestampHtml = `
             <div class="timestamp-box warning">
-                <span>⚠️ Previously entered at: <strong>${prevTimeStr}</strong></span>
+                <span>⚠️ Gate entry was already recorded at: <strong>${prevTimeStr}</strong></span>
+            </div>
+        `;
+    } else if (state === "food_used") {
+        const prevTimeStr = formatTimestamp(data && data.foodTime ? data.foodTime : null);
+        timestampHtml = `
+            <div class="timestamp-box warning">
+                <span>⚠️ Meal was already claimed at: <strong>${prevTimeStr}</strong></span>
             </div>
         `;
     }
@@ -549,6 +677,8 @@ function showResultState(state, data, title, message, entryTimeDate) {
 
         <div class="result-body">
             ${name ? `<h3 class="result-student-name">${name}</h3>` : ""}
+
+            ${statusPillsHtml}
 
             <div class="result-details-grid">
                 ${enrollment ? `
@@ -585,7 +715,6 @@ function showResultState(state, data, title, message, entryTimeDate) {
 
     resultModal.style.display = "flex";
 
-    // Bind "Scan Next Pass" button
     const btnScanNext = document.getElementById("btnScanNext");
     if (btnScanNext) {
         btnScanNext.addEventListener("click", () => {
@@ -600,26 +729,25 @@ function closeResultModal() {
     }
     isProcessingScan = false;
 
-    // Reset manual input
     if (manualPassIdInput) {
         manualPassIdInput.value = "";
     }
 
-    // If Camera tab is active, re-activate camera
     if (tabCamera && tabCamera.classList.contains("active")) {
         startCamera();
     }
 }
 
 /* =========================================================
-   7. RECENT SCANS SESSION LOGS
+   8. RECENT SCANS SESSION LOGS
 ========================================================= */
 
-function addSessionLog(student, entryDate) {
+function addSessionLog(student, scanDate, mode) {
     const name = student.name || "Student";
-    const timeStr = formatTimestamp(entryDate);
+    const timeStr = formatTimestamp(scanDate);
+    const badge = (mode === "food") ? "🍽️ Food" : "🎟️ Entry";
 
-    sessionLogs.unshift({ name, timeStr, passId: student.passId });
+    sessionLogs.unshift({ name, timeStr, passId: student.passId, badge });
 
     if (sessionLogCount) {
         sessionLogCount.textContent = sessionLogs.length;
@@ -636,9 +764,9 @@ function renderRecentScans() {
         return;
     }
 
-    recentScansList.innerHTML = sessionLogs.slice(0, 10).map(item => `
+    recentScansList.innerHTML = sessionLogs.slice(0, 15).map(item => `
         <div class="recent-item">
-            <span class="recent-name">✓ ${escapeHtml(item.name)} <small style="color: #D4AF37; margin-left: 6px;">(${escapeHtml(item.passId)})</small></span>
+            <span class="recent-name">${item.badge} • ${escapeHtml(item.name)} <small style="color: #D4AF37; margin-left: 4px;">(${escapeHtml(item.passId)})</small></span>
             <span class="recent-time">${escapeHtml(item.timeStr)}</span>
         </div>
     `).join("");
@@ -656,7 +784,7 @@ function initRecentAccordion() {
 }
 
 /* =========================================================
-   8. UTILITIES
+   9. UTILITIES
 ========================================================= */
 
 function formatTimestamp(ts) {

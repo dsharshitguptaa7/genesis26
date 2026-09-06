@@ -80,9 +80,13 @@
                         <span class="user-icon">👤</span>
                         <span id="activeUserEmail">scanner1@genesis26.in</span>
                     </span>
-                    <span class="counter-pill">
+                    <span class="counter-pill" title="Total Gate Entries Verified">
                         <span class="counter-icon">🎟️</span>
-                        <span id="scannedCountBadge">0 Verified</span>
+                        <span id="scannedCountBadge">0 Entries</span>
+                    </span>
+                    <span class="counter-pill food-pill" title="Total Meals Claimed">
+                        <span class="counter-icon">🍽️</span>
+                        <span id="foodCountBadge">0 Meals</span>
                     </span>
                 </div>
                 <button type="button" id="logoutBtn" class="btn-logout" title="Sign out of scanner">
@@ -98,10 +102,33 @@
             <!-- Dashboard Branding -->
             <div class="dash-branding">
                 <p class="dash-eyebrow">SBS MINI AUDITORIUM • 08 SEP 2026</p>
-                <h2 class="dash-title">Entry Verification Terminal</h2>
+                <h2 class="dash-title">Genesis'26 Scanner Terminal</h2>
             </div>
 
-            <!-- Mode Selector Tabs -->
+            <!-- Scan Purpose Selector (Entry vs Food) -->
+            <div class="purpose-container">
+                <p class="purpose-label">SELECT SCAN PURPOSE</p>
+                <div class="purpose-grid" role="radiogroup" aria-label="Scan Purpose">
+                    <button type="button" id="btnPurposeEntry" class="purpose-btn active" role="radio" aria-checked="true" data-purpose="entry">
+                        <span class="purpose-icon">🎟️</span>
+                        <div class="purpose-info">
+                            <span class="purpose-title">Gate Entry Scan</span>
+                            <span class="purpose-sub">Auditorium Access Check</span>
+                        </div>
+                        <span class="purpose-check">✓</span>
+                    </button>
+                    <button type="button" id="btnPurposeFood" class="purpose-btn" role="radio" aria-checked="false" data-purpose="food">
+                        <span class="purpose-icon">🍽️</span>
+                        <div class="purpose-info">
+                            <span class="purpose-title">Food / Meal Scan</span>
+                            <span class="purpose-sub">Refreshment Distribution</span>
+                        </div>
+                        <span class="purpose-check">✓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mode Selector Tabs (Camera vs Manual) -->
             <div class="mode-tabs" role="tablist">
                 <button type="button" id="tabCamera" class="mode-tab active" role="tab" aria-selected="true">
                     📷 Camera Scanner
@@ -114,6 +141,10 @@
             <!-- Panel A: Camera Scanner View -->
             <div id="cameraPanel" class="tab-panel active">
                 <div class="camera-viewport-card">
+                    <div id="activePurposeBadge" class="active-purpose-tag">
+                        <span class="purpose-tag-icon">🎟️</span>
+                        <span class="purpose-tag-text">MODE: GATE ENTRY SCAN</span>
+                    </div>
                     <div id="reader" class="scanner-viewfinder"></div>
                     <div id="scannerOverlay" class="scanner-reticle" aria-hidden="true">
                         <div class="reticle-corner tl"></div>
