@@ -2446,5 +2446,22 @@
     "passId": "GEN26-SM9945",
     "foodUsed": false,
     "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA26000005586",
+    "name": "Soumya Kushwaha",
+    "course": "M.Sc Chemistry",
+    "year": "1st Year",
+    "formNo": "61",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SK1346",
+    "foodUsed": false,
+    "foodTime": null
   }
+
 ]
