@@ -1582,20 +1582,6 @@
     "passId": "GEN26-AK3839"
   },
   {
-    "enrollment": "CSJMA26000004560",
-    "name": "Aparna Bajpai",
-    "course": "M.Sc Mathematics",
-    "year": "1st Year",
-    "formNo": "86",
-    "mode": "Online",
-    "amount": 400,
-    "inCharge": "Vipin Kumar",
-    "payment": "confirmed",
-    "status": "confirmed",
-    "passReleased": true,
-    "passId": "GEN26-AB3555"
-  },
-  {
     "enrollment": "CSJMA26000001880",
     "name": "Kundan",
     "course": "M.Sc Mathematics",
