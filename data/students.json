@@ -864,8 +864,8 @@
     "foodTime": null
   },
   {
-    "enrollment": "CSJMA26000006875",
-    "name": "Deepali",
+    "enrollment": "CSJMA26000001605",
+    "name": "Apporva Singh",
     "course": "B.Sc Mathematics (Hons)",
     "year": "1st Year",
     "formNo": "12",
@@ -875,7 +875,23 @@
     "payment": "confirmed",
     "status": "confirmed",
     "passReleased": true,
-    "passId": "GEN26-DK1246",
+    "passId": "GEN26-AS1246",
+    "foodUsed": false,
+    "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA26000007290",
+    "name": "Subhi",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "12",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Ishaan Deep Singh Malhotra",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SK1003",
     "foodUsed": false,
     "foodTime": null
   },
@@ -2462,6 +2478,71 @@
     "passId": "GEN26-SK1346",
     "foodUsed": false,
     "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA25000004953",
+    "name": "Shreya Vishnoi",
+    "course": "B.Sc Chemistry (Hons)",
+    "year": "2nd Year",
+    "formNo": "61",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SV1346",
+    "foodUsed": false,
+    "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA26000001874",
+    "name": "Anchal Vishwakarma",
+    "course": "M.Sc Quantum Technology",
+    "year": "1st Year",
+    "formNo": "61",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AV1346",
+    "foodUsed": false,
+    "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA8577051351",
+    "name": "Ayushi Pandey",
+    "course": "B.Sc Mathematics (Hons)",
+    "year": "1st Year",
+    "formNo": "61",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-AP1346",
+    "foodUsed": false,
+    "foodTime": null
+  },
+  {
+    "enrollment": "CSJMA26000005586",
+    "name": "Soumya Kushwaha",
+    "course": "M.Sc Chemistry",
+    "year": "1st Year",
+    "formNo": "61",
+    "mode": "Online",
+    "amount": 400,
+    "inCharge": "Kshama Yadav",
+    "payment": "confirmed",
+    "status": "confirmed",
+    "passReleased": true,
+    "passId": "GEN26-SK1346",
+    "foodUsed": false,
+    "foodTime": null
   }
+
 
 ]
