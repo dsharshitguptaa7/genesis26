@@ -13,7 +13,9 @@
     "passReleased": true,
     "passId": "GEN26-AT7751",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006459",
@@ -29,7 +31,9 @@
     "passReleased": true,
     "passId": "GEN26-NA1635",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001659",
@@ -45,7 +49,9 @@
     "passReleased": true,
     "passId": "GEN26-NB1659",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004542",
@@ -61,7 +67,9 @@
     "passReleased": true,
     "passId": "GEN26-AV5235",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001656",
@@ -77,7 +85,9 @@
     "passReleased": true,
     "passId": "GEN26-VK5123",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006160",
@@ -93,7 +103,9 @@
     "passReleased": true,
     "passId": "GEN26-RY6625",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004925",
@@ -109,7 +121,9 @@
     "passReleased": true,
     "passId": "GEN26-AY1136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005641",
@@ -125,7 +139,9 @@
     "passReleased": true,
     "passId": "GEN26-GM3965",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004545",
@@ -141,7 +157,9 @@
     "passReleased": true,
     "passId": "GEN26-TM9955",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006890",
@@ -157,7 +175,9 @@
     "passReleased": true,
     "passId": "GEN26-PS7745",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001655",
@@ -173,7 +193,9 @@
     "passReleased": true,
     "passId": "GEN26-DP1177",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001660",
@@ -189,7 +211,9 @@
     "passReleased": true,
     "passId": "GEN26-MV5513",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001658",
@@ -205,7 +229,9 @@
     "passReleased": true,
     "passId": "GEN26-AP0036",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005643",
@@ -221,7 +247,9 @@
     "passReleased": true,
     "passId": "GEN26-VD0136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004926",
@@ -237,7 +265,9 @@
     "passReleased": true,
     "passId": "GEN26-NK1063",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007307",
@@ -253,7 +283,9 @@
     "passReleased": true,
     "passId": "GEN26-AS1963",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004893",
@@ -269,7 +301,9 @@
     "passReleased": true,
     "passId": "GEN26-SD1783",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004886",
@@ -285,7 +319,9 @@
     "passReleased": true,
     "passId": "GEN26-PS4596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004892",
@@ -301,7 +337,9 @@
     "passReleased": true,
     "passId": "GEN26-HT9596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA2400002434",
@@ -317,7 +355,9 @@
     "passReleased": true,
     "passId": "GEN26-MP9596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000003428",
@@ -333,7 +373,9 @@
     "passReleased": true,
     "passId": "GEN26-HM9007",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000003425",
@@ -349,7 +391,9 @@
     "passReleased": true,
     "passId": "GEN26-AY9996",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004923",
@@ -365,7 +409,9 @@
     "passReleased": true,
     "passId": "GEN26-RD6565",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001643",
@@ -381,7 +427,9 @@
     "passReleased": true,
     "passId": "GEN26-IA1256",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004539",
@@ -397,7 +445,9 @@
     "passReleased": true,
     "passId": "GEN26-VM1639",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006148",
@@ -413,7 +463,9 @@
     "passReleased": true,
     "passId": "GEN26-AB5237",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001644",
@@ -429,7 +481,9 @@
     "passReleased": true,
     "passId": "GEN26-NK5946",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006882",
@@ -445,7 +499,9 @@
     "passReleased": true,
     "passId": "GEN26-AS5523",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006457",
@@ -461,7 +517,9 @@
     "passReleased": true,
     "passId": "GEN26-JS2595",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006884",
@@ -477,7 +535,9 @@
     "passReleased": true,
     "passId": "GEN26-MM5475",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001650",
@@ -493,7 +553,9 @@
     "passReleased": true,
     "passId": "GEN26-KS7835",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001641",
@@ -509,7 +571,9 @@
     "passReleased": true,
     "passId": "GEN26-AM9365",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001647",
@@ -525,7 +589,9 @@
     "passReleased": true,
     "passId": "GEN26-KS7885",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006880",
@@ -541,7 +607,9 @@
     "passReleased": true,
     "passId": "GEN26-SB5235",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005639",
@@ -557,7 +625,9 @@
     "passReleased": true,
     "passId": "GEN26-RS4466",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005640",
@@ -573,7 +643,9 @@
     "passReleased": true,
     "passId": "GEN26-AP5349",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006879",
@@ -589,7 +661,9 @@
     "passReleased": true,
     "passId": "GEN26-SK4478",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006885",
@@ -605,7 +679,9 @@
     "passReleased": true,
     "passId": "GEN26-AK4231",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006975",
@@ -621,7 +697,9 @@
     "passReleased": true,
     "passId": "GEN26-VK4403",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006886",
@@ -637,7 +715,9 @@
     "passReleased": true,
     "passId": "GEN26-LK1125",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250101501",
@@ -653,7 +733,9 @@
     "passReleased": true,
     "passId": "GEN26-NS5235",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004951",
@@ -669,7 +751,9 @@
     "passReleased": true,
     "passId": "GEN26-SS4951",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004954",
@@ -685,7 +769,9 @@
     "passReleased": true,
     "passId": "GEN26-CM4954",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004955",
@@ -701,7 +787,9 @@
     "passReleased": true,
     "passId": "GEN26-AS5232",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000035546",
@@ -717,7 +805,9 @@
     "passReleased": true,
     "passId": "GEN26-RK5599",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004959",
@@ -733,7 +823,9 @@
     "passReleased": true,
     "passId": "GEN26-SJ5535",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004958",
@@ -749,7 +841,9 @@
     "passReleased": true,
     "passId": "GEN26-RJ6635",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153320",
@@ -765,7 +859,9 @@
     "passReleased": true,
     "passId": "GEN26-TS5785",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004956",
@@ -781,7 +877,9 @@
     "passReleased": true,
     "passId": "GEN26-SK6696",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004947",
@@ -797,7 +895,9 @@
     "passReleased": true,
     "passId": "GEN26-PK4456",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004949",
@@ -813,7 +913,9 @@
     "passReleased": true,
     "passId": "GEN26-SO9735",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001607",
@@ -829,7 +931,9 @@
     "passReleased": true,
     "passId": "GEN26-NK6643",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004914",
@@ -845,7 +949,9 @@
     "passReleased": true,
     "passId": "GEN26-AB3545",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005636",
@@ -861,7 +967,9 @@
     "passReleased": true,
     "passId": "GEN26-SR5965",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001605",
@@ -877,7 +985,9 @@
     "passReleased": true,
     "passId": "GEN26-AS1246",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007290",
@@ -893,7 +1003,9 @@
     "passReleased": true,
     "passId": "GEN26-SK1003",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006877",
@@ -909,7 +1021,9 @@
     "passReleased": true,
     "passId": "GEN26-UC3597",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004917",
@@ -925,7 +1039,9 @@
     "passReleased": true,
     "passId": "GEN26-AK3696",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006453",
@@ -941,7 +1057,9 @@
     "passReleased": true,
     "passId": "GEN26-AS3596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007293",
@@ -957,7 +1075,9 @@
     "passReleased": true,
     "passId": "GEN26-DA5296",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005241",
@@ -973,7 +1093,9 @@
     "passReleased": true,
     "passId": "GEN26-PP5533",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004920",
@@ -989,7 +1111,9 @@
     "passReleased": true,
     "passId": "GEN26-AS5524",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007291",
@@ -1005,7 +1129,9 @@
     "passReleased": true,
     "passId": "GEN26-SV5334",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001599",
@@ -1021,7 +1147,9 @@
     "passReleased": true,
     "passId": "GEN26-MS1167",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005630",
@@ -1037,7 +1165,9 @@
     "passReleased": true,
     "passId": "GEN26-KY5469",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153316",
@@ -1053,7 +1183,9 @@
     "passReleased": true,
     "passId": "GEN26-SM5316",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000013504",
@@ -1069,7 +1201,9 @@
     "passReleased": true,
     "passId": "GEN26-AS1350",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000005235",
@@ -1085,7 +1219,9 @@
     "passReleased": true,
     "passId": "GEN26-ID5235",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250072168",
@@ -1101,7 +1237,9 @@
     "passReleased": true,
     "passId": "GEN26-RD5139",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153313",
@@ -1117,7 +1255,9 @@
     "passReleased": true,
     "passId": "GEN26-RP9596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153312",
@@ -1133,7 +1273,9 @@
     "passReleased": true,
     "passId": "GEN26-SM9596",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250072169",
@@ -1149,7 +1291,9 @@
     "passReleased": true,
     "passId": "GEN26-SM9539",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250072162",
@@ -1165,7 +1309,9 @@
     "passReleased": true,
     "passId": "GEN26-AY9003",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000002419",
@@ -1181,7 +1327,9 @@
     "passReleased": true,
     "passId": "GEN26-MT2419",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000002415",
@@ -1197,7 +1345,9 @@
     "passReleased": true,
     "passId": "GEN26-AS2415",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000002429",
@@ -1213,7 +1363,9 @@
     "passReleased": true,
     "passId": "GEN26-SO2429",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA24000002421",
@@ -1229,7 +1381,9 @@
     "passReleased": true,
     "passId": "GEN26-NY2513",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006138",
@@ -1245,7 +1399,9 @@
     "passReleased": true,
     "passId": "GEN26-DG5445",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005651",
@@ -1261,7 +1417,9 @@
     "passReleased": true,
     "passId": "GEN26-PR9931",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006910",
@@ -1277,7 +1435,9 @@
     "passReleased": true,
     "passId": "GEN26-HY9931",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001872",
@@ -1293,7 +1453,9 @@
     "passReleased": true,
     "passId": "GEN26-OD4423",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001875",
@@ -1309,7 +1471,9 @@
     "passReleased": true,
     "passId": "GEN26-SP4423",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001039",
@@ -1325,7 +1489,9 @@
     "passReleased": true,
     "passId": "GEN26-NW5165",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001033",
@@ -1341,7 +1507,9 @@
     "passReleased": true,
     "passId": "GEN26-SR5113",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001030",
@@ -1357,7 +1525,9 @@
     "passReleased": true,
     "passId": "GEN26-SR1136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "26REG26060652",
@@ -1373,7 +1543,9 @@
     "passReleased": true,
     "passId": "GEN26-PY4426",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004864",
@@ -1389,7 +1561,9 @@
     "passReleased": true,
     "passId": "GEN26-JY1136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001074",
@@ -1405,7 +1579,9 @@
     "passReleased": true,
     "passId": "GEN26-AS2236",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004868",
@@ -1421,7 +1597,9 @@
     "passReleased": true,
     "passId": "GEN26-AD2218",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001032",
@@ -1437,7 +1615,9 @@
     "passReleased": true,
     "passId": "GEN26-DS1796",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006755",
@@ -1453,7 +1633,9 @@
     "passReleased": true,
     "passId": "GEN26-AC1799",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA2226",
@@ -1469,7 +1651,9 @@
     "passReleased": true,
     "passId": "GEN26-AE1799",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA260000003738",
@@ -1485,7 +1669,9 @@
     "passReleased": true,
     "passId": "GEN26-MA1889",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007235",
@@ -1501,7 +1687,9 @@
     "passReleased": true,
     "passId": "GEN26-MC1999",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250088920",
@@ -1517,7 +1705,9 @@
     "passReleased": true,
     "passId": "GEN26-KK1189",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250071977",
@@ -1533,7 +1723,9 @@
     "passReleased": true,
     "passId": "GEN26-PC2569",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250090032",
@@ -1549,7 +1741,9 @@
     "passReleased": true,
     "passId": "GEN26-AK9536",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153304",
@@ -1565,7 +1759,9 @@
     "passReleased": true,
     "passId": "GEN26-SY4935",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMU25250088919",
@@ -1581,7 +1777,9 @@
     "passReleased": true,
     "passId": "GEN26-PM4413",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000011326",
@@ -1597,7 +1795,9 @@
     "passReleased": true,
     "passId": "GEN26-SR4413",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA22001195714",
@@ -1613,7 +1813,9 @@
     "passReleased": true,
     "passId": "GEN26-AK4413",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250177398",
@@ -1629,7 +1831,9 @@
     "passReleased": true,
     "passId": "GEN26-TV4413",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000039806",
@@ -1645,7 +1849,9 @@
     "passReleased": true,
     "passId": "GEN26-KY4413",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004885",
@@ -1661,7 +1867,9 @@
     "passReleased": true,
     "passId": "GEN26-SY2216",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001535",
@@ -1677,7 +1885,9 @@
     "passReleased": true,
     "passId": "GEN26-SK2036",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006862",
@@ -1693,7 +1903,9 @@
     "passReleased": true,
     "passId": "GEN26-AR2113",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005606",
@@ -1709,7 +1921,9 @@
     "passReleased": true,
     "passId": "GEN26-TA2765",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001536",
@@ -1725,7 +1939,9 @@
     "passReleased": true,
     "passId": "GEN26-MK2136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001534",
@@ -1741,7 +1957,9 @@
     "passReleased": true,
     "passId": "GEN26-RP0036",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001537",
@@ -1757,7 +1975,9 @@
     "passReleased": true,
     "passId": "GEN26-DX2136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250153309",
@@ -1773,7 +1993,9 @@
     "passReleased": true,
     "passId": "GEN26-AS3839",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA2500006224",
@@ -1789,7 +2011,9 @@
     "passReleased": true,
     "passId": "GEN26-AV3839",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA2500006218",
@@ -1805,7 +2029,9 @@
     "passReleased": true,
     "passId": "GEN26-SS3839",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA2500006202",
@@ -1821,7 +2047,9 @@
     "passReleased": true,
     "passId": "GEN26-AK3839",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001880",
@@ -1837,7 +2065,9 @@
     "passReleased": true,
     "passId": "GEN26-KD3545",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004560",
@@ -1853,7 +2083,9 @@
     "passReleased": true,
     "passId": "GEN26-AB3555",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001881",
@@ -1869,7 +2101,9 @@
     "passReleased": true,
     "passId": "GEN26-BK3555",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006913",
@@ -1885,7 +2119,9 @@
     "passReleased": true,
     "passId": "GEN26-AA3552",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004951",
@@ -1901,7 +2137,9 @@
     "passReleased": true,
     "passId": "GEN26-PG3555",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001882",
@@ -1917,7 +2155,9 @@
     "passReleased": true,
     "passId": "GEN26-RS3512",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005655",
@@ -1933,7 +2173,9 @@
     "passReleased": true,
     "passId": "GEN26-SM3599",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000043136",
@@ -1949,7 +2191,9 @@
     "passReleased": true,
     "passId": "GEN26-VK2296",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA250000038",
@@ -1965,7 +2209,9 @@
     "passReleased": true,
     "passId": "GEN26-AS9978",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000035392",
@@ -1981,7 +2227,9 @@
     "passReleased": true,
     "passId": "GEN26-MY2296",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25250070522",
@@ -1997,7 +2245,9 @@
     "passReleased": true,
     "passId": "GEN26-SK2296",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMU262721190",
@@ -2013,7 +2263,9 @@
     "passReleased": true,
     "passId": "GEN26-PS1133",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003732",
@@ -2029,7 +2281,9 @@
     "passReleased": true,
     "passId": "GEN26-NY1036",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003734",
@@ -2045,7 +2299,9 @@
     "passReleased": true,
     "passId": "GEN26-AP1966",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007081",
@@ -2061,7 +2317,9 @@
     "passReleased": true,
     "passId": "GEN26-AS1136",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003735",
@@ -2077,7 +2335,9 @@
     "passReleased": true,
     "passId": "GEN26-SD4423",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005970",
@@ -2093,7 +2353,9 @@
     "passReleased": true,
     "passId": "GEN26-PM4432",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003731",
@@ -2109,7 +2371,9 @@
     "passReleased": true,
     "passId": "GEN26-SK1296",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003727",
@@ -2125,7 +2389,9 @@
     "passReleased": true,
     "passId": "GEN26-DS1469",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006638",
@@ -2141,7 +2407,9 @@
     "passReleased": true,
     "passId": "GEN26-KS1449",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000006639",
@@ -2157,7 +2425,9 @@
     "passReleased": true,
     "passId": "GEN26-US1177",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005971",
@@ -2173,7 +2443,9 @@
     "passReleased": true,
     "passId": "GEN26-KK5577",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003736",
@@ -2189,7 +2461,9 @@
     "passReleased": true,
     "passId": "GEN26-AK0049",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005270",
@@ -2205,7 +2479,9 @@
     "passReleased": true,
     "passId": "GEN26-AS0099",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003733",
@@ -2221,7 +2497,9 @@
     "passReleased": true,
     "passId": "GEN26-AR0101",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000004750",
@@ -2237,7 +2515,9 @@
     "passReleased": true,
     "passId": "GEN26-PC0103",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMU262727248",
@@ -2253,7 +2533,9 @@
     "passReleased": true,
     "passId": "GEN26-AP0109",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007082",
@@ -2269,7 +2551,9 @@
     "passReleased": true,
     "passId": "GEN26-AS0111",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMU262739034",
@@ -2285,7 +2569,9 @@
     "passReleased": true,
     "passId": "GEN26-SS0117",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003730",
@@ -2301,7 +2587,9 @@
     "passReleased": true,
     "passId": "GEN26-AS0120",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003729",
@@ -2317,7 +2605,9 @@
     "passReleased": true,
     "passId": "GEN26-AM0121",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000003737",
@@ -2333,7 +2623,9 @@
     "passReleased": true,
     "passId": "GEN26-AT0127",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007085",
@@ -2349,7 +2641,9 @@
     "passReleased": true,
     "passId": "GEN26-AK0133",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000006143",
@@ -2365,7 +2659,9 @@
     "passReleased": true,
     "passId": "GEN26-HG3407",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000006138",
@@ -2381,7 +2677,9 @@
     "passReleased": true,
     "passId": "GEN26-MY2407",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000006150",
@@ -2397,7 +2695,9 @@
     "passReleased": true,
     "passId": "GEN26-PD5548",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000006152",
@@ -2413,7 +2713,9 @@
     "passReleased": true,
     "passId": "GEN26-RT5998",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000035668",
@@ -2429,7 +2731,9 @@
     "passReleased": true,
     "passId": "GEN26-AS2123",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000006137",
@@ -2445,7 +2749,9 @@
     "passReleased": true,
     "passId": "GEN26-AS2144",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000007047",
@@ -2461,7 +2767,9 @@
     "passReleased": true,
     "passId": "GEN26-SM9945",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000005586",
@@ -2477,7 +2785,9 @@
     "passReleased": true,
     "passId": "GEN26-SK1346",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA25000004953",
@@ -2493,7 +2803,9 @@
     "passReleased": true,
     "passId": "GEN26-SV1346",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA26000001874",
@@ -2509,7 +2821,9 @@
     "passReleased": true,
     "passId": "GEN26-AV1346",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   },
   {
     "enrollment": "CSJMA8577051351",
@@ -2525,6 +2839,8 @@
     "passReleased": true,
     "passId": "GEN26-AP1346",
     "foodUsed": false,
-    "foodTime": null
+    "foodTime": null,
+    "giftGiven": false,
+    "giftTime": null
   }
 ]

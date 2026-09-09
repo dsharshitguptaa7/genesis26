@@ -25,10 +25,12 @@ let html5QrCode = null;
 let isScannerRunning = false;
 let isProcessingScan = false;
 let currentCameraFacing = "environment"; // Preferred rear camera on mobile
-let currentScanPurpose = "entry"; // "entry" or "food"
+let currentScanPurpose = "gift"; // "gift" (default today for Freshers distribution), "entry", or "food"
+let isGivingGift = false; // Latch preventing rapid duplicate clicks on [ GIVE GIFT ]
 
 let sessionEntryCount = 0;
 let sessionFoodCount = 0;
+let sessionGiftCount = 0;
 let sessionLogs = [];
 
 // DOM Element References
@@ -44,8 +46,10 @@ const loginBtn = document.getElementById("loginBtn");
 const activeUserEmail = document.getElementById("activeUserEmail");
 const scannedCountBadge = document.getElementById("scannedCountBadge");
 const foodCountBadge = document.getElementById("foodCountBadge");
+const giftCountBadge = document.getElementById("giftCountBadge");
 const logoutBtn = document.getElementById("logoutBtn");
 
+const btnPurposeGift = document.getElementById("btnPurposeGift");
 const btnPurposeEntry = document.getElementById("btnPurposeEntry");
 const btnPurposeFood = document.getElementById("btnPurposeFood");
 const activePurposeBadge = document.getElementById("activePurposeBadge");
@@ -192,10 +196,16 @@ function setLoginLoading(loading) {
 }
 
 /* =========================================================
-   2. SCAN PURPOSE SELECTOR (GATE ENTRY vs FOOD SCAN)
+   2. SCAN PURPOSE SELECTOR (GIFT vs GATE ENTRY vs FOOD SCAN)
 ========================================================= */
 
 function initPurposeListeners() {
+    if (btnPurposeGift) {
+        btnPurposeGift.addEventListener("click", () => {
+            setScanPurpose("gift");
+        });
+    }
+
     if (btnPurposeEntry) {
         btnPurposeEntry.addEventListener("click", () => {
             setScanPurpose("entry");
@@ -212,31 +222,31 @@ function initPurposeListeners() {
 function setScanPurpose(purpose) {
     currentScanPurpose = purpose;
 
-    if (purpose === "entry") {
-        if (btnPurposeEntry) {
-            btnPurposeEntry.classList.add("active");
-            btnPurposeEntry.setAttribute("aria-checked", "true");
-        }
-        if (btnPurposeFood) {
-            btnPurposeFood.classList.remove("active");
-            btnPurposeFood.setAttribute("aria-checked", "false");
-        }
-        if (activePurposeBadge) {
+    const buttons = [
+        { btn: btnPurposeGift, key: "gift" },
+        { btn: btnPurposeEntry, key: "entry" },
+        { btn: btnPurposeFood, key: "food" }
+    ];
+
+    buttons.forEach(({ btn, key }) => {
+        if (!btn) return;
+        const isActive = (key === purpose);
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-checked", isActive ? "true" : "false");
+    });
+
+    if (activePurposeBadge) {
+        if (purpose === "gift") {
+            activePurposeBadge.innerHTML = `
+                <span class="purpose-tag-icon">🎁</span>
+                <span class="purpose-tag-text">MODE: FRESHERS GIFT SCAN</span>
+            `;
+        } else if (purpose === "entry") {
             activePurposeBadge.innerHTML = `
                 <span class="purpose-tag-icon">🎟️</span>
                 <span class="purpose-tag-text">MODE: GATE ENTRY SCAN</span>
             `;
-        }
-    } else {
-        if (btnPurposeFood) {
-            btnPurposeFood.classList.add("active");
-            btnPurposeFood.setAttribute("aria-checked", "true");
-        }
-        if (btnPurposeEntry) {
-            btnPurposeEntry.classList.remove("active");
-            btnPurposeEntry.setAttribute("aria-checked", "false");
-        }
-        if (activePurposeBadge) {
+        } else if (purpose === "food") {
             activePurposeBadge.innerHTML = `
                 <span class="purpose-tag-icon">🍽️</span>
                 <span class="purpose-tag-text">MODE: FOOD / MEAL SCAN</span>
@@ -248,6 +258,7 @@ function setScanPurpose(purpose) {
 function updateCountersUI() {
     if (scannedCountBadge) scannedCountBadge.textContent = `${sessionEntryCount} Entries`;
     if (foodCountBadge) foodCountBadge.textContent = `${sessionFoodCount} Meals`;
+    if (giftCountBadge) giftCountBadge.textContent = `${sessionGiftCount} Gifts`;
 }
 
 /* =========================================================
@@ -426,15 +437,16 @@ function initManualVerifyListeners() {
 }
 
 /* =========================================================
-   6. FIRESTORE PASS VERIFICATION (DUAL SCAN SUPPORT)
+   6. FIRESTORE PASS VERIFICATION & GIFT DISTRIBUTION
 ========================================================= */
 
 /**
  * verifyPass(passId)
  * Central verification controller supporting:
- * - currentScanPurpose === "entry"
- * - currentScanPurpose === "food"
- * Enforces atomic Firestore duplicate-entry & duplicate-meal prevention.
+ * - currentScanPurpose === "gift" (Freshers 1st Year Gift Distribution)
+ * - currentScanPurpose === "entry" (Gate Entry Scan)
+ * - currentScanPurpose === "food" (Food / Meal Scan)
+ * Enforces atomic Firestore duplicate-entry, duplicate-meal, and duplicate-gift prevention.
  */
 async function verifyPass(passId) {
     if (!passId || !String(passId).trim()) {
@@ -443,7 +455,7 @@ async function verifyPass(passId) {
     }
 
     const cleanPassId = String(passId).trim();
-    const mode = currentScanPurpose; // "entry" or "food"
+    const mode = currentScanPurpose; // "gift", "entry", or "food"
 
     if (!db) {
         showResultState("invalid", { passId: cleanPassId }, "SYSTEM UNAVAILABLE", "Database connection not initialized. Check internet.");
@@ -457,28 +469,60 @@ async function verifyPass(passId) {
         const snapshot = await getDocs(q);
 
         if (snapshot.empty) {
-            showResultState("invalid", { passId: cleanPassId }, "INVALID QR CODE — ENTRY DENIED", "No student record matches this Pass ID in the database.");
+            showResultState("invalid", { passId: cleanPassId }, "Invalid Pass / Student Not Found", "No student record matches this Pass ID in the database.");
             return;
         }
 
         const studentDoc = snapshot.docs[0];
         const studentRef = doc(db, "students", studentDoc.id);
         const studentData = studentDoc.data();
+        studentData.enrollment = studentData.enrollment || studentDoc.id;
 
-        // 2. Validate Payment
+        // =========================================================
+        // MODE A: FRESHERS GIFT DISTRIBUTION (1st Year Only)
+        // =========================================================
+        if (mode === "gift") {
+            const rawYear = String(studentData.year || "").trim();
+            const isFirstYear = rawYear.toLowerCase() === "1st year" || rawYear === "1st Year";
+
+            // Edge Case 2: Student is not 1st Year
+            if (!isFirstYear) {
+                showResultState("gift_ineligible", studentData, "Not Eligible", "Not Eligible — Gift is only for 1st Year students.");
+                return;
+            }
+
+            // Edge Case 3: Student already received gift
+            if (studentData.giftGiven === true) {
+                showResultState("gift_used", studentData, "Gift Already Collected", "This student has already collected their Freshers gift.", studentData.giftTime);
+                return;
+            }
+
+            // Edge Case 7 & Normal Flow: 1st Year + giftGiven === false (or uninitialized)
+            // DO NOT automatically mark as given; display student details and [ GIVE GIFT ] button
+            showResultState("gift_ready", studentData, "Student Found", "Please verify student identity and click below to distribute gift.", null, () => {
+                executeGiftDistribution(studentData, studentRef, cleanPassId);
+            });
+            return;
+        }
+
+        // =========================================================
+        // MODE B & C: GATE ENTRY & FOOD/MEAL SCAN
+        // =========================================================
+
+        // Validate Payment
         const isPaymentConfirmed = String(studentData.payment || studentData.status || "").toLowerCase() === "confirmed";
         if (!isPaymentConfirmed) {
             showResultState("pending", studentData, "PAYMENT NOT CONFIRMED — DENIED", "This student's payment is not verified. Please direct them to the coordinator desk.");
             return;
         }
 
-        // 3. Validate Pass Release
+        // Validate Pass Release
         if (!studentData.passReleased) {
             showResultState("unreleased", studentData, "PASS NOT RELEASED — DENIED", "This entry pass has not been officially released yet.");
             return;
         }
 
-        // 4. Mode-specific Pre-checks
+        // Mode-specific Pre-checks
         if (mode === "entry") {
             if (studentData.entryUsed === true) {
                 showResultState("used", studentData, "PASS ALREADY USED — ENTRY DENIED", "This pass has already been scanned and used for gate entry.");
@@ -491,7 +535,7 @@ async function verifyPass(passId) {
             }
         }
 
-        // 5. Atomic Transaction (Duplicate Prevention & Audit Log)
+        // Atomic Transaction (Duplicate Prevention & Audit Log for Entry & Food)
         let committedTimestamp = new Date();
 
         await runTransaction(db, async (transaction) => {
@@ -536,13 +580,14 @@ async function verifyPass(passId) {
                 studentName: studentData.name || "Unknown",
                 enrollment: studentData.enrollment || studentDoc.id,
                 course: studentData.course || "",
+                year: studentData.year || "",
                 scannedAt: serverTimestamp(),
                 scannerUid: auth.currentUser ? auth.currentUser.uid : "unknown",
                 scannerEmail: auth.currentUser ? auth.currentUser.email : "scanner1@genesis26.in"
             });
         });
 
-        // 6. Success State Handling
+        // Success State Handling
         if (mode === "entry") {
             studentData.entryUsed = true;
             studentData.entryTime = committedTimestamp;
@@ -576,11 +621,109 @@ async function verifyPass(passId) {
     }
 }
 
+/**
+ * executeGiftDistribution(studentData, studentRef, cleanPassId)
+ * Triggered ONLY when operator explicitly clicks [ GIVE GIFT ].
+ * Enforces:
+ * 1. Rapid click / double-click protection (isGivingGift latch)
+ * 2. Atomic Firestore transaction updating ONLY giftGiven & giftTime
+ * 3. In-transaction duplicate gift prevention
+ * 4. Audit logging to entryLogs with scanType: "gift"
+ * 5. Immediate UI refresh to reflect giftGiven = true
+ */
+async function executeGiftDistribution(studentData, studentRef, cleanPassId) {
+    if (isGivingGift) return;
+    isGivingGift = true;
+
+    const btnGiveGift = document.getElementById("btnGiveGift");
+    if (btnGiveGift) {
+        btnGiveGift.disabled = true;
+        const btnText = btnGiveGift.querySelector(".gift-btn-text");
+        const btnSpinner = btnGiveGift.querySelector(".gift-btn-spinner");
+        if (btnText) btnText.textContent = "Distributing Gift...";
+        if (btnSpinner) btnSpinner.style.display = "inline-block";
+    }
+
+    let committedTimestamp = new Date();
+
+    try {
+        await runTransaction(db, async (transaction) => {
+            const freshDoc = await transaction.get(studentRef);
+            if (!freshDoc.exists()) {
+                throw new Error("STUDENT_NOT_FOUND");
+            }
+
+            const freshData = freshDoc.data();
+
+            // 1. Strict Year Verification
+            const freshYear = String(freshData.year || "").trim();
+            if (freshYear.toLowerCase() !== "1st year" && freshYear !== "1st Year") {
+                throw new Error("NOT_ELIGIBLE_YEAR");
+            }
+
+            // 2. Strict Duplicate Check
+            if (freshData.giftGiven === true) {
+                const err = new Error("GIFT_ALREADY_USED");
+                err.previousTime = freshData.giftTime;
+                throw err;
+            }
+
+            // 3. Update ONLY giftGiven and giftTime (matches Firestore security rules exactly)
+            transaction.update(studentRef, {
+                giftGiven: true,
+                giftTime: serverTimestamp()
+            });
+
+            // 4. Log to entryLogs subcollection
+            const logsCol = collection(db, "entryLogs");
+            const newLogRef = doc(logsCol);
+            transaction.set(newLogRef, {
+                passId: cleanPassId,
+                scanType: "gift",
+                studentName: studentData.name || "Unknown",
+                enrollment: studentData.enrollment || studentRef.id,
+                course: studentData.course || "",
+                year: studentData.year || "1st Year",
+                scannedAt: serverTimestamp(),
+                scannerUid: auth.currentUser ? auth.currentUser.uid : "unknown",
+                scannerEmail: auth.currentUser ? auth.currentUser.email : "scanner1@genesis26.in"
+            });
+        });
+
+        // 5. Update local record so UI re-render reflects giftGiven = true
+        studentData.giftGiven = true;
+        studentData.giftTime = committedTimestamp;
+        sessionGiftCount++;
+
+        updateCountersUI();
+        addSessionLog(studentData, committedTimestamp, "gift");
+
+        // Show Success Result State
+        showResultState("gift_success", studentData, "Gift Given Successfully", "Freshers gift has been recorded and handed over.", committedTimestamp);
+
+    } catch (err) {
+        console.error("Gift Distribution Error:", err);
+        if (err.message === "GIFT_ALREADY_USED") {
+            const usedData = { ...studentData, giftTime: err.previousTime || studentData.giftTime };
+            showResultState("gift_used", usedData, "Gift Already Collected", "This student has already collected their Freshers gift.", usedData.giftTime);
+        } else if (err.message === "NOT_ELIGIBLE_YEAR") {
+            showResultState("gift_ineligible", studentData, "Not Eligible", "Not Eligible — Gift is only for 1st Year students.");
+        } else {
+            // Edge Case 4: Firebase update fails -> show proper error message, do NOT show success
+            showResultState("gift_failed", studentData, "Gift Distribution Failed", "Gift distribution failed. Please try again.", null, () => {
+                executeGiftDistribution(studentData, studentRef, cleanPassId);
+            });
+        }
+    } finally {
+        isGivingGift = false;
+    }
+}
+
 /* =========================================================
    7. VERIFICATION RESULT MODAL RENDERING
 ========================================================= */
 
-function showResultState(state, data, title, message, actionTimestamp) {
+function showResultState(state, data, title, message, actionTimestamp, onAction) {
     if (!resultModal || !resultCard) return;
 
     let icon = "❌";
@@ -603,6 +746,26 @@ function showResultState(state, data, title, message, actionTimestamp) {
         icon = "⚠️";
         stateClass = "state-food-used";
         statusSubtitle = "MEAL DENIED";
+    } else if (state === "gift_ready") {
+        icon = "🎁";
+        stateClass = "state-gift-ready";
+        statusSubtitle = "ELIGIBLE FOR GIFT";
+    } else if (state === "gift_success") {
+        icon = "🎁";
+        stateClass = "state-gift-success";
+        statusSubtitle = "GIFT DISTRIBUTED";
+    } else if (state === "gift_used") {
+        icon = "⚠️";
+        stateClass = "state-gift-used";
+        statusSubtitle = "ALREADY CLAIMED";
+    } else if (state === "gift_ineligible") {
+        icon = "❌";
+        stateClass = "state-gift-ineligible";
+        statusSubtitle = "NOT ELIGIBLE";
+    } else if (state === "gift_failed") {
+        icon = "❌";
+        stateClass = "state-invalid";
+        statusSubtitle = "UPDATE FAILED";
     } else if (state === "pending" || state === "unreleased") {
         icon = "⏳";
         stateClass = (state === "pending") ? "state-pending" : "state-unreleased";
@@ -617,23 +780,30 @@ function showResultState(state, data, title, message, actionTimestamp) {
     const enrollment = data && data.enrollment ? escapeHtml(data.enrollment) : null;
     const course = data && data.course ? escapeHtml(data.course) : null;
     const passId = data && data.passId ? escapeHtml(data.passId) : "";
+    const rawYear = data && data.year ? String(data.year).trim() : null;
+    const isFirstYear = rawYear && (rawYear.toLowerCase() === "1st year" || rawYear === "1st Year");
 
-    // Dual Status Pills (Gate Entry + Food Status)
+    // Status Pills (Gate Entry + Food + Gift Status)
     let statusPillsHtml = "";
-    if (data && (data.entryUsed !== undefined || data.foodUsed !== undefined)) {
+    if (data && (data.entryUsed !== undefined || data.foodUsed !== undefined || data.giftGiven !== undefined)) {
         const isEntryDone = Boolean(data.entryUsed);
         const isFoodDone = Boolean(data.foodUsed);
+        const isGiftDone = Boolean(data.giftGiven);
 
-        const entryTimeText = isEntryDone ? formatTimestamp(data.entryTime || actionTimestamp) : "Pending";
-        const foodTimeText = isFoodDone ? formatTimestamp(data.foodTime || actionTimestamp) : "Unclaimed";
+        const entryTimeText = isEntryDone ? formatTimestamp(data.entryTime || (state === "valid" ? actionTimestamp : null)) : "Pending";
+        const foodTimeText = isFoodDone ? formatTimestamp(data.foodTime || (state === "food_valid" ? actionTimestamp : null)) : "Unclaimed";
+        const giftTimeText = isGiftDone ? formatTimestamp(data.giftTime || (state === "gift_success" ? actionTimestamp : null)) : "Not Given";
 
         statusPillsHtml = `
             <div class="event-statuses-row">
-                <div class="status-mini-pill ${isEntryDone ? 'done' : 'pending'}">
+                <div class="status-mini-pill ${isEntryDone ? 'done' : 'pending'}" title="Gate Entry Status">
                     <span>🎟️ Entry: <strong>${isEntryDone ? '✓ ' + entryTimeText : '⏳ Pending'}</strong></span>
                 </div>
-                <div class="status-mini-pill ${isFoodDone ? 'done' : 'pending'}">
+                <div class="status-mini-pill ${isFoodDone ? 'done' : 'pending'}" title="Food Refreshment Status">
                     <span>🍽️ Meal: <strong>${isFoodDone ? '✓ ' + foodTimeText : '🍽️ Unclaimed'}</strong></span>
+                </div>
+                <div class="status-mini-pill ${isGiftDone ? 'done' : 'pending'}" title="Freshers Gift Status">
+                    <span>🎁 Gift: <strong>${isGiftDone ? '✓ ' + giftTimeText : '🎁 Not Given'}</strong></span>
                 </div>
             </div>
         `;
@@ -641,8 +811,10 @@ function showResultState(state, data, title, message, actionTimestamp) {
 
     // Timestamp Box
     let timestampHtml = "";
-    if (state === "valid" || state === "food_valid") {
-        const actionLabel = (state === "food_valid") ? "Meal claimed at" : "Entry verified at";
+    if (state === "valid" || state === "food_valid" || state === "gift_success") {
+        let actionLabel = "Entry verified at";
+        if (state === "food_valid") actionLabel = "Meal claimed at";
+        else if (state === "gift_success") actionLabel = "Gift collected at";
         const timeStr = formatTimestamp(actionTimestamp || new Date());
         timestampHtml = `
             <div class="timestamp-box">
@@ -662,6 +834,44 @@ function showResultState(state, data, title, message, actionTimestamp) {
             <div class="timestamp-box warning">
                 <span>⚠️ Meal was already claimed at: <strong>${prevTimeStr}</strong></span>
             </div>
+        `;
+    } else if (state === "gift_used") {
+        const prevTimeStr = formatTimestamp(data && data.giftTime ? data.giftTime : actionTimestamp);
+        timestampHtml = `
+            <div class="timestamp-box warning">
+                <span>⚠️ Gift was already collected at: <strong>${prevTimeStr}</strong></span>
+            </div>
+        `;
+    }
+
+    // Action button(s)
+    let actionButtonsHtml = "";
+    if (state === "gift_ready") {
+        actionButtonsHtml = `
+            <button type="button" id="btnGiveGift" class="btn-give-gift">
+                <span class="gift-btn-icon">🎁</span>
+                <span class="gift-btn-text">GIVE GIFT</span>
+                <span class="gift-btn-spinner" style="display: none;"></span>
+            </button>
+            <button type="button" id="btnScanNext" class="btn-scan-next" style="background: rgba(0,0,0,0.06); color: #6F5A4B;">
+                Cancel / Scan Next
+            </button>
+        `;
+    } else if (state === "gift_failed" && typeof onAction === "function") {
+        actionButtonsHtml = `
+            <button type="button" id="btnRetryGift" class="btn-give-gift" style="background: linear-gradient(135deg, #DC2626, #B91C1C); color: #fff;">
+                <span class="gift-btn-icon">🔄</span>
+                <span class="gift-btn-text">Retry Give Gift</span>
+            </button>
+            <button type="button" id="btnScanNext" class="btn-scan-next">
+                📷 Scan Next Pass
+            </button>
+        `;
+    } else {
+        actionButtonsHtml = `
+            <button type="button" id="btnScanNext" class="btn-scan-next">
+                📷 Scan Next Pass
+            </button>
         `;
     }
 
@@ -695,8 +905,15 @@ function showResultState(state, data, title, message, actionTimestamp) {
                     </div>
                 ` : ""}
 
+                ${rawYear ? `
+                    <div class="detail-item">
+                        <span class="item-label">STUDENT YEAR</span>
+                        <strong class="item-val ${isFirstYear ? 'year-pill-highlight' : 'year-pill-ineligible'}">${rawYear}</strong>
+                    </div>
+                ` : ""}
+
                 ${course ? `
-                    <div class="detail-item full-width">
+                    <div class="detail-item ${rawYear ? '' : 'full-width'}">
                         <span class="item-label">COURSE</span>
                         <strong class="item-val">${course}</strong>
                     </div>
@@ -707,9 +924,7 @@ function showResultState(state, data, title, message, actionTimestamp) {
 
             ${message ? `<p style="font-size: 13px; color: #6F5A4B; margin-bottom: 18px; text-align: center;">${escapeHtml(message)}</p>` : ""}
 
-            <button type="button" id="btnScanNext" class="btn-scan-next">
-                📷 Scan Next Pass
-            </button>
+            ${actionButtonsHtml}
         </div>
     `;
 
@@ -721,6 +936,16 @@ function showResultState(state, data, title, message, actionTimestamp) {
             closeResultModal();
         });
     }
+
+    const btnGiveGift = document.getElementById("btnGiveGift");
+    if (btnGiveGift && typeof onAction === "function") {
+        btnGiveGift.addEventListener("click", onAction);
+    }
+
+    const btnRetryGift = document.getElementById("btnRetryGift");
+    if (btnRetryGift && typeof onAction === "function") {
+        btnRetryGift.addEventListener("click", onAction);
+    }
 }
 
 function closeResultModal() {
@@ -728,6 +953,7 @@ function closeResultModal() {
         resultModal.style.display = "none";
     }
     isProcessingScan = false;
+    isGivingGift = false;
 
     if (manualPassIdInput) {
         manualPassIdInput.value = "";
@@ -745,7 +971,9 @@ function closeResultModal() {
 function addSessionLog(student, scanDate, mode) {
     const name = student.name || "Student";
     const timeStr = formatTimestamp(scanDate);
-    const badge = (mode === "food") ? "🍽️ Food" : "🎟️ Entry";
+    let badge = "🎟️ Entry";
+    if (mode === "food") badge = "🍽️ Food";
+    else if (mode === "gift") badge = "🎁 Gift";
 
     sessionLogs.unshift({ name, timeStr, passId: student.passId, badge });
 

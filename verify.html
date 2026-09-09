@@ -88,6 +88,10 @@
                         <span class="counter-icon">🍽️</span>
                         <span id="foodCountBadge">0 Meals</span>
                     </span>
+                    <span class="counter-pill gift-pill" title="Total Freshers Gifts Distributed">
+                        <span class="counter-icon">🎁</span>
+                        <span id="giftCountBadge">0 Gifts</span>
+                    </span>
                 </div>
                 <button type="button" id="logoutBtn" class="btn-logout" title="Sign out of scanner">
                     <span>Logout</span>
@@ -105,23 +109,31 @@
                 <h2 class="dash-title">Genesis'26 Scanner Terminal</h2>
             </div>
 
-            <!-- Scan Purpose Selector (Entry vs Food) -->
+            <!-- Scan Purpose Selector (Gift vs Entry vs Food) -->
             <div class="purpose-container">
                 <p class="purpose-label">SELECT SCAN PURPOSE</p>
                 <div class="purpose-grid" role="radiogroup" aria-label="Scan Purpose">
-                    <button type="button" id="btnPurposeEntry" class="purpose-btn active" role="radio" aria-checked="true" data-purpose="entry">
+                    <button type="button" id="btnPurposeGift" class="purpose-btn active" role="radio" aria-checked="true" data-purpose="gift">
+                        <span class="purpose-icon">🎁</span>
+                        <div class="purpose-info">
+                            <span class="purpose-title">Freshers Gift</span>
+                            <span class="purpose-sub">1st Year Distribution</span>
+                        </div>
+                        <span class="purpose-check">✓</span>
+                    </button>
+                    <button type="button" id="btnPurposeEntry" class="purpose-btn" role="radio" aria-checked="false" data-purpose="entry">
                         <span class="purpose-icon">🎟️</span>
                         <div class="purpose-info">
-                            <span class="purpose-title">Gate Entry Scan</span>
-                            <span class="purpose-sub">Auditorium Access Check</span>
+                            <span class="purpose-title">Gate Entry</span>
+                            <span class="purpose-sub">Auditorium Access</span>
                         </div>
                         <span class="purpose-check">✓</span>
                     </button>
                     <button type="button" id="btnPurposeFood" class="purpose-btn" role="radio" aria-checked="false" data-purpose="food">
                         <span class="purpose-icon">🍽️</span>
                         <div class="purpose-info">
-                            <span class="purpose-title">Food / Meal Scan</span>
-                            <span class="purpose-sub">Refreshment Distribution</span>
+                            <span class="purpose-title">Food / Meal</span>
+                            <span class="purpose-sub">Refreshment Claim</span>
                         </div>
                         <span class="purpose-check">✓</span>
                     </button>
@@ -142,8 +154,8 @@
             <div id="cameraPanel" class="tab-panel active">
                 <div class="camera-viewport-card">
                     <div id="activePurposeBadge" class="active-purpose-tag">
-                        <span class="purpose-tag-icon">🎟️</span>
-                        <span class="purpose-tag-text">MODE: GATE ENTRY SCAN</span>
+                        <span class="purpose-tag-icon">🎁</span>
+                        <span class="purpose-tag-text">MODE: FRESHERS GIFT SCAN</span>
                     </div>
                     <div id="reader" class="scanner-viewfinder"></div>
                     <div id="scannerOverlay" class="scanner-reticle" aria-hidden="true">
